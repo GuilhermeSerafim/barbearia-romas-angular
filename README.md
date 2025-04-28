@@ -1,27 +1,34 @@
-# BarbeariaRomas
+# 💈 Barbearia ROMAS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.19.
+Sistema de landing page + área administrativa para gerenciamento de galeria de estilos e agendamentos, desenvolvido em **Angular**.
 
-## Development server
+> 📌 Este projeto é uma evolução em Angular de uma versão anterior em [HTML/CSS](https://github.com/GuilhermeSerafim/barbearia-romas).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🎨 Protótipo no Figma
 
-## Code scaffolding
+🔗 [Visualizar no Figma](https://www.figma.com/design/y2kRUAvkGo18AS7Ni7oMiR/Barbearia?node-id=0-1&t=Nn3EAWp13rkXZ2Wh-1)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📂 Funcionalidades
 
-## Build
+### 🌐 Landing Page
+- Seções: Hero, Serviços, Galeria, Quem Somos, Localização e Contato
+- Design moderno com identidade visual premium
+- Responsividade completa (Mobile, Tablet, Notebook, Desktop)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🔐 Área Administrativa
+- Login exclusivo para administradores (`/adm/login`)
+- Gerenciamento de **Galeria de Estilos** (CRUD de imagens e descrições)
+- Gerenciamento de **Agendamentos** (CRUD de serviços, clientes, datas)
 
-## Running unit tests
+## 🛠️ Tecnologias e Ferramentas
+- Angular (Standalone Components)
+- HTML, CSS (Responsivo com Media Queries)
+- TypeScript
+- Angular Router
+- JSON Server (Mock API para testes de CRUD)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+> Projeto em desenvolvimento. Novas funcionalidades e melhorias de UX/UI serão implementadas nas próximas versões.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
