@@ -1,0 +1,30 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--bege);
+}
+
+h1 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 65px;
+}
+
+h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    color: var(--bordo);
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+}   

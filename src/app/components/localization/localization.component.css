@@ -1,0 +1,57 @@
+.localizacao {
+    padding: 50px 0px;
+    background-color: var(--bege);
+    text-align: center;
+    margin-top: 60px;
+}
+
+.localizacao h2 {
+    font-size: 32px;
+    font-family: var(--fonte-titulo);
+    color: var(--bordo);
+    margin-bottom: 40px;
+}
+
+.titulo-localizacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.mapa {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.loader {
+    width: 44.8px;
+    height: 44.8px;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50% 50% 0 50%;
+    background: #0000;
+    background-image: radial-gradient(circle 11.2px at 50% 50%, #0000 94%, #6D1817);
+}
+
+.loader:after {
+    animation: pulse-ytk0dhmd 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse-ytk0dhmd {
+    to {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+    }
+}

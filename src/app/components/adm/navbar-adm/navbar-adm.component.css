@@ -1,0 +1,52 @@
+.navbar {
+    background-color: #060704;
+    position: fixed;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px 0;
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+}
+
+.navbar nav ul li a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #7A1C1C;
+    /* bordô */
+}
+
+.navbar .logo img {
+    width: 100px;
+}
+
+.voltar button {
+    background-color: transparent;
+    border: 2px solid #FBF8EE;
+    color: #FBF8EE;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.voltar button:hover {
+    background-color: #6D1817;
+    color: #FBF8EE;
+    transform: scale(1.1);
+}

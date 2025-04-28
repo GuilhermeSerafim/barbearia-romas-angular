@@ -1,0 +1,89 @@
+.container-bg {
+    display: flex;
+    width: 100%;
+    height: 557px;
+    flex-shrink: 0;
+    aspect-ratio: 1921/557;
+    background-image: url(/bg_galeria.png);
+    align-items: center;
+    justify-content: center;
+}
+
+.container-bg h1 {
+    color: #FBF8EE;
+    text-align: center;
+    font-family: Lobster;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+
+.svg-adicionar {
+    cursor: pointer;
+    margin: 48px 0 19px 418px;
+    transition: transform 0.15s;
+}
+
+.svg-adicionar:hover {
+    transform: scale(1.10);
+}
+
+.container-clientes {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 219px;
+}
+
+.container-clientes-items img {
+    width: 307px;
+    height: 306px;
+    flex-shrink: 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.container-clientes-items img:hover {
+    transform: scale(1.05);
+}
+
+.container-clientes-items p:nth-child(2) {
+    margin-top: 27px;
+}
+
+.container-clientes-items p {
+    font-size: 14px;
+    width: 307px;
+    line-height: 135.938%;
+    text-align: justify;
+}
+.container-clientes-items svg {
+    margin-top: 19px;
+    transition: transform 0.3s;
+}
+
+.container-clientes-items svg:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container-clientes-svg {
+    display: flex;
+    gap: 36px;
+}
+
+
+/* Notebook Full HD (até 1920px) */
+@media (max-width: 1920px) {
+    .svg-adicionar {
+        margin: 48px 0 19px 230px;
+    }
+}

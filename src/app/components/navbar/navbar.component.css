@@ -1,0 +1,33 @@
+.menu {
+    background-color: #060704;
+    position: fixed;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+}
+
+.menu ul li a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #7A1C1C;
+    /* bordô */
+}
+
+.menu .logo img {
+    width: 100px;
+}

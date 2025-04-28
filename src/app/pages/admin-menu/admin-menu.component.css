@@ -1,0 +1,172 @@
+.container-agendamentos {
+    display: flex;
+    margin: 150px 0;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    margin: 150px 0;
+}
+
+.container-agendamentos img {
+    transition: transform 0.3s;
+}
+
+
+.container-agendamentos img:hover {
+    transform: scale(1.05);
+}
+
+.info-agendamentos h1 {
+    color: var(--bordo);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info-agendamentos p {
+    color: #000;
+    text-align: justify;
+    line-height: 135.938%;
+    margin: 54px 0;
+}
+
+/* 
+position: relative: torna o botão referência para posicionamento absoluto dos pseudo‑elementos (::before e ::after).
+
+display: inline-block: faz do botão um bloco “inline”, permitindo largura/altura/padding, mas mantendo‑o na mesma linha de elementos de texto.
+*/
+.info-agendamentos button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    /* 4px topo+baixo + 8px ícone + 4px */
+    border: 1px solid var(--bg-color2, #080704);
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: var(--bg-color2, #080704);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 132px;
+    height: 42px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-agendamentos button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-agendamentos button::before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: var(--bordo);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+
+.info-agendamentos button::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background: var(--bordo);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+/* GALERIA */
+.container-galeria {
+    display: flex;
+    margin: 150px 0;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    margin: 150px 0;
+    flex-direction: row-reverse;
+}
+
+.container-galeria img {
+    transition: transform 0.3s;
+}
+
+
+.container-galeria img:hover {
+    transform: scale(1.05);
+}
+
+.info-galeria h1 {
+    color: var(--bordo);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info-galeria p {
+    color: #000;
+    text-align: justify;
+    line-height: 135.938%;
+    margin: 54px 0;
+}
+
+
+.info-galeria button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    /* 4px topo+baixo + 8px ícone + 4px */
+    border: 1px solid var(--bg-color2, #080704);
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: var(--bg-color2, #080704);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 132px;
+    height: 42px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.info-galeria button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-galeria button::before {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: var(--bordo);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+
+.info-galeria button::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background: var(--bordo);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}

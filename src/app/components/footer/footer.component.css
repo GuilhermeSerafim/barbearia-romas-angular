@@ -1,0 +1,93 @@
+.footer {
+    background-color: var(--preto);
+    padding: 60px 20px 30px 20px;
+    color: var(--bege);
+    text-align: center;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-top img {
+    width: 100px;
+}
+
+.footer-top a {
+    color: var(--bege);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer-top a:hover {
+    color: #7A1C1C;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--bege);
+    margin: 20px auto;
+}
+
+.footer-balls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-balls img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.1s;
+
+}
+
+.footer-balls img:hover {
+    transform: scale(1.30);
+
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: var(--bege);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: var(--bege);
+}
+
+.rodape-autor {
+    text-decoration: none;
+    color: var(--bege);
+    /* pra manter a cor igual ao resto */
+    position: relative;
+    cursor: pointer;
+}
+
+
+.rodape-autor::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6D1817;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.rodape-autor:hover::after {
+    width: 100%;
+}

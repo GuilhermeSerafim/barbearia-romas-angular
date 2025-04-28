@@ -1,0 +1,10 @@
+:root {
+    /* Cores principais */
+    --bordo: #6D1817;
+    --preto: #080704;
+    --bege: #FBF8EE;
+  
+    /* Fontes */
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-titulo: 'Lobster', cursive;
+  }
