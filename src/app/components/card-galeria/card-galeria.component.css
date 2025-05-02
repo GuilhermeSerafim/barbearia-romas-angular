@@ -1,20 +1,3 @@
-.servicos {
-    height: 50vh;
-    padding: 100px 20px;
-    background-color: var(--bege);
-    text-align: center;
-}
-
-.servicos h2 {
-    margin-bottom: 50px;
-}
-
-.cards {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 40px;
-    flex-wrap: wrap;
-}
 
 .card {
     background-color: var(--preto);
