@@ -1,4 +1,4 @@
-# 💈 Barbearia ROMAS
+#  <img src="https://www.thexperiencebb.com/img/loading.gif" alt="Astronomo" width="50" height="50"> Barbearia ROMAS
 
 Sistema de landing page + área administrativa para gerenciamento de galeria de estilos e agendamentos, desenvolvido em **Angular**.
 
