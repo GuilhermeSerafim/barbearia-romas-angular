@@ -26,25 +26,3 @@
     flex-wrap: wrap;
 }
 
-.galeria-item {
-    max-width: 305px;
-}
-
-.galeria-item img {
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    border-radius: 4px;
-    transition: transform 0.3s;
-}
-
-.galeria-item img:hover {
-    transform: scale(1.05);
-}
-
-.galeria-item p {
-    font-size: 14px;
-    color: #000;
-    line-height: 1.5;
-    text-align: justify;
-}

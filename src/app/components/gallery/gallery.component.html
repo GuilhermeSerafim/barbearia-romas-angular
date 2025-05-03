@@ -3,20 +3,20 @@
     <p>Começamos com uma tesoura e um sonho. Hoje, entregamos técnica, estilo e transformação.</p>
 
     <div class="galeria-content">
-      <div class="galeria-item">
-        <img src="/cliente1.png" alt="Cliente 1">
-        <p>"Sai daqui me sentindo outro cara, corte alinhado e barba na régua."<br>— João S.</p>
-      </div>
-
-      <div class="galeria-item">
-        <img src="/cliente2.png" alt="Cliente 2">
-        <p>"O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!"<br>— Evelyn O.
-        </p>
-      </div>
-
-      <div class="galeria-item">
-        <img src="/cliente3.png" alt="Cliente 3">
-        <p>"Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência."<br>— Letícia M.</p>
-      </div>
+      <app-card-galeria
+      [pathimg]="'/cliente1.png'"
+      [comentario]="'Sai daqui me sentindo outro cara, corte alinhado e barba na régua.'"
+      [nome]="'João S'"
+      />
+      <app-card-galeria
+      [pathimg]="'/cliente2.png'"
+      [comentario]="'O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!'"
+      [nome]="'Evelyn O'"
+      />
+      <app-card-galeria
+      [pathimg]="'/cliente3.png'"
+      [comentario]="'Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência.'"
+      [nome]="'Letícia M'"
+      />
     </div>
   </section>
