@@ -22,7 +22,7 @@ Sistema de landing page + área administrativa para gerenciamento de galeria de 
 
 ## 🛠️ Tecnologias e Ferramentas
 - Angular (Standalone Components)
-- HTML, CSS
+- HTML, CSS e Typescript
 - TypeScript
 - Angular Router
 - JSON Server (Mock API para testes de CRUD)
