@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CardGaleriaComponent } from "../card-galeria/card-galeria.component";
+import { CardServiceComponent } from "../card-service/card-service.component";
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CardGaleriaComponent],
+  imports: [CardServiceComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })

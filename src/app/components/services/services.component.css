@@ -15,34 +15,3 @@
     gap: 40px;
     flex-wrap: wrap;
 }
-
-.card {
-    background-color: var(--preto);
-    color: var(--branco);
-    padding: 30px 20px;
-    border-radius: 4px;
-    width: 220px;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: var(--bege);
-}
-
-.card p {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--bege);
-}
