@@ -1,66 +1,73 @@
-main {
-    flex: 1;
+/* login.component.scss */
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;         /* ocupa a viewport inteira */
+  }
+  
+  .login-main {
+    flex: 1;                /* ocupa o espaço entre header e footer */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-}
-
-.container {
+    min-height: 0;          /* evita estouro em flex‑box */
+  }
+  
+  /* -----------  AQUI o ajuste -------------- */
+  .container {
+    width: 100%;            /* ocupa toda a largura possível */
+    max-width: 422px;       /* mas nunca passa de 422 px        */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 422px;
-}
+  }
+  
 
-.h1adm {
-    color: #6D1817;
+  .h1adm {
+    color: #6d1817;
     font-family: 'Lobster';
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 20px;
-}
-
-.texto-u-s {
+  }
+  
+  .texto-u-s {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
-}
-
-input {
+  }
+  
+  input,
+  .button-entrar {
     width: 100%;
     height: 64px;
     border-radius: 5px;
-    border: 1px solid #000;
-    background: #FFF;
-    padding: 10px;
     font-family: 'Poppins';
     font-size: 16px;
-}
-
-.button-entar {
-    width: 100%;
-    height: 64px;
-    border-radius: 5px;
-    background: #6D1817;
-    color: white;
-    font-family: 'Poppins';
+    box-sizing: border-box; /* garante que borda conte na largura */
+  }
+  
+  input {
+    border: 1px solid #000;
+    background: #fff;
+    padding: 10px;
+  }
+  
+  .button-entrar {
+    margin-top: 10px;
+    background: #6d1817;
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-.button-entar:hover {
+  }
+  
+  .button-entrar:hover {
     background: #5a1413;
-}
-
-/* Notebook Full HD (até 1920px) */
-@media (max-width: 1920px) {
-    .h1adm {
-        margin-top: 150px;
-    }
-}
+  }
+  

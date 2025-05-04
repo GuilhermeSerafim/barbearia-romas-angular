@@ -82,7 +82,7 @@
 
 
 /* Notebook Full HD (até 1920px) */
-@media (max-width: 1920px) {
+@media (max-width:  1366px) {
     .svg-adicionar {
         margin: 48px 0 19px 230px;
     }

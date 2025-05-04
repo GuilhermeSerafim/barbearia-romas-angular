@@ -1,12 +1,16 @@
-<app-navbar-adm />
-<main>
-    <div class="container">
+<div class="login-wrapper">
+    <app-navbar-adm></app-navbar-adm>
+  
+    <main class="login-main">
+      <div class="container">
         <h1 class="h1adm">ADMINISTRADOR</h1>
         <div class="texto-u-s">
-            <input type="text" placeholder="Usuario">
-            <input type="password" placeholder="Senha">
-            <button class="button-entar" (click)="entrar()">Entrar</button>
+          <input type="text" placeholder="Usuário" />
+          <input type="password" placeholder="Senha" />
+          <button class="button-entrar" (click)="entrar()">Entrar</button>
         </div>
-    </div>
-</main>
-<app-footer-adm />
+      </div>
+    </main>
+  
+    <app-footer-adm></app-footer-adm>
+  </div>
