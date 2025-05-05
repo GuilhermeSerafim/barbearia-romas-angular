@@ -28,25 +28,17 @@
 
 
     <div class="container-clientes">
-       <app-card-galeria-adm
-            comment="'Sai daqui me sentindo outro cara, corte alinhado e barba na régua."
-            name="João S"
-            path="/cliente1.png"
-            alt="Cliente João"
-       />
-       <app-card-galeria-adm
-            comment="O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!"
-            name="Evelyn O"
-            path="/cliente2.png"
-            alt="Cliente Evelyn"
-       />
-       <app-card-galeria-adm
-            comment="Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência."
-            name="Letícia M"
-            path="/cliente3.png"
-            alt="Cliente Letícia"
-       />
-   
+        <!--  trackexpressão permite que o Angular mantenha um relacionamento entre seus dados e os nós DOM na página. Isso permite que o Angular otimize o desempenho executando o mínimo de operações DOM necessárias quando os dados são alterados. -->
+        @for (client of listClient; track $index; let i = $index) {
+            <app-card-galeria-adm
+                [comment]="client.comment"
+                [name]="client.name"
+                [path]="client.img"
+                [alt]="client.alt"
+                [index]="i"
+                (deleteClientEmmit)="deleteCliente($event)"
+            />
+        }
     </div>
 </main>
 
