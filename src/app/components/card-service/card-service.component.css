@@ -26,6 +26,6 @@
 
 .card p {
     font-size: 18px;
-    font-weight: bold;
     color: var(--bege);
+    font-family: var(--fonte-titulo);
 }

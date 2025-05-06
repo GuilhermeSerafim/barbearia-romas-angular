@@ -7,6 +7,11 @@
 
 .servicos h2 {
     margin-bottom: 50px;
+    text-align: center;
+    font-size: 32px;
+    font-family: var(--fonte-titulo);
+    color: var(--bordo);
+    margin-bottom: 40px;
 }
 
 .cards {
