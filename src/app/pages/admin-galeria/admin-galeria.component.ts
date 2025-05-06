@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FooterAdmComponent } from "../../components/adm/footer-adm/footer-adm.component";
 import { NavbarAdmComponent } from "../../components/adm/navbar-adm/navbar-adm.component";
 import { CardGaleriaAdmComponent } from "../../components/card-galeria-adm/card-galeria-adm.component";
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-admin-galeria',
   standalone: true,
-  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent],
+  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent, MatDialogModule],
   templateUrl: './admin-galeria.component.html',
   styleUrl: './admin-galeria.component.css'
 })
@@ -34,5 +35,16 @@ export class AdminGaleriaComponent {
   ]
   deleteCliente(i: number) {
     this.listClient.splice(i, 1);
+  }
+
+  readonly dialog = inject(MatDialog);
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    // No lugar de AdminGaleriaComponent, colocar um componente form 
+    this.dialog.open(AdminGaleriaComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 }
