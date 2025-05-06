@@ -16,7 +16,6 @@
     @Input() teste: string = "";
     @Output() deleteClientEmmit = new EventEmitter<number>();
     emitirItemASerExcluido() {
-      console.log(this.index);
       this.deleteClientEmmit.emit(this.index);
     }
     editarItemGaleria() {

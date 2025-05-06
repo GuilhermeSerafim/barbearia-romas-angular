@@ -3,7 +3,7 @@
 .login-wrapper {
     display: flex;
     flex-direction: column;
-    height: 100dvh;         /* ocupa a viewport inteira */
+    height: 120dvh;         /* ocupa a viewport inteira */
   }
   
   .login-main {
@@ -70,4 +70,11 @@
   .button-entrar:hover {
     background: #5a1413;
   }
+
   
+  @media (max-width:  1700px) {
+    .h1adm {
+      margin-top: 100px;
+    }
+    
+}   
