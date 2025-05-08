@@ -19,6 +19,7 @@
 .info-agendamentos h1 {
     color: var(--bordo);
     font-size: 32px;
+    font-family: var(--fonte-titulo);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -90,6 +91,7 @@ display: inline-block: faz do botão um bloco “inline”, permitindo largura/a
     display: flex;
     margin: 150px 0;
     align-items: center;
+
     justify-content: center;
     gap: 200px;
     margin: 150px 0;
@@ -111,6 +113,8 @@ display: inline-block: faz do botão um bloco “inline”, permitindo largura/a
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    font-family: var(--fonte-titulo);
+
 }
 
 .info-galeria p {

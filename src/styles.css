@@ -2,4 +2,3 @@
 @import "./styles/_global.css";
 @import "./styles/_variables.css";
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
