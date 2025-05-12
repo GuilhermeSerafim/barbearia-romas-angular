@@ -26,22 +26,18 @@
         </defs>
     </svg>
 
-
     <div class="container-clientes">
-        <!--  track permite que o Angular mantenha um relacionamento entre seus dados e os nós DOM na página. Isso permite que o Angular otimize o desempenho executando o mínimo de operações DOM necessárias quando os dados são alterados. -->
-        @for (client of listClient; track $index; let i = $index) {
+        @for (client of itens; track $index; let i = $index) {
             <app-card-galeria-adm
-                [comment]="client.comment"
-                [name]="client.name"
+                [comment]="client.comentario"
+                [name]="client.nome"
                 [path]="client.img"
-                [alt]="client.alt"
                 [index]="i"
-                (deleteClientEmmit)="deleteCliente($event)"
+                (deleteClientEmmit)="remove($event)"
             />
         }
     </div>
 
-    <button mat-raised-button (click)="openDialog('100ms', '100ms')">Open dialog without animation</button>
 </main>
 
 <app-footer-adm />

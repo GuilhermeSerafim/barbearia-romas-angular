@@ -1,0 +1,16 @@
+{
+  "galeria": [
+    {
+      "id": "1",
+      "img": "/cliente1.png",
+      "comentario": "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
+      "nome": "João S"
+    },
+    {
+      "id": "3",
+      "img": "/cliente3.png",
+      "comentario": "Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência.",
+      "nome": "Letícia M"
+    }
+  ]
+}

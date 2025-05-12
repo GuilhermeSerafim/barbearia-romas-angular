@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FooterAdmComponent } from "../../components/adm/footer-adm/footer-adm.component";
 import { NavbarAdmComponent } from "../../components/adm/navbar-adm/navbar-adm.component";
 import { CardGaleriaAdmComponent } from "../../components/card-galeria-adm/card-galeria-adm.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { GaleriaItem, GaleriaService } from '../../services/galeria.service';
 
 @Component({
   selector: 'app-admin-galeria',
@@ -11,40 +12,23 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   templateUrl: './admin-galeria.component.html',
   styleUrl: './admin-galeria.component.css'
 })
-export class AdminGaleriaComponent {
-  listClient = [
-    {
-      comment: "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
-      name: "João S",
-      img: "/cliente1.png",
-      path: "/cliente1.png",
-      alt: "Cliente João"
-    },
-    {
-      comment: "O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!",
-      name: "Cliente E",
-      img: "/cliente2.png",
-      alt: "Cliente Evelyn"
-    },
-    {
-      comment: "Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência.",
-      name: "Letícia M",
-      img: "/cliente3.png",
-      alt: "Cliente Letícia"
-    },
-  ]
-  deleteCliente(i: number) {
-    this.listClient.splice(i, 1);
+export class AdminGaleriaComponent implements OnInit {
+
+  constructor(private galeria: GaleriaService) { }
+
+  itens: GaleriaItem[] = [];
+
+  ngOnInit(): void {
+    this.load();
+  }
+  
+  load() {
+    this.galeria.getAll().subscribe(data => this.itens = data);
   }
 
-  readonly dialog = inject(MatDialog);
-
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    // No lugar de AdminGaleriaComponent, colocar um componente form 
-    this.dialog.open(AdminGaleriaComponent, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-    });
+  remove(id: number) {
+    console.log(id);
+    this.galeria.delete(id)
+      .subscribe(() => this.load());
   }
 }
