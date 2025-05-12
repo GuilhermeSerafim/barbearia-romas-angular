@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card-galeria.component.css'
 })
 export class CardGaleriaComponent {
-  @Input() pathimg: string = '';
-  @Input() comentario: string = '';
-  @Input() nome: string = '';
+  @Input({ required: true }) pathimg: string = '';
+  @Input({ required: true }) comentario: string = '';
+  @Input({ required: true }) nome: string = '';
 }

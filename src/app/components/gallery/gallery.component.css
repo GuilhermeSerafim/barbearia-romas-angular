@@ -21,7 +21,7 @@
 
 .galeria-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 40px;
     flex-wrap: wrap;
 }

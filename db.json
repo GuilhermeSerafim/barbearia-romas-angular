@@ -1,10 +1,10 @@
 {
   "galeria": [
     {
-      "id": "1",
-      "img": "/cliente1.png",
-      "comentario": "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
-      "nome": "João S"
+      "id": "2",
+      "img": "/cliente2.png",
+      "comentario": "O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!",
+      "nome": "Evelyn O"
     },
     {
       "id": "3",
