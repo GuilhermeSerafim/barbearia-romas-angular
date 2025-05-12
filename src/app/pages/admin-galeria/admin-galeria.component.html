@@ -3,7 +3,7 @@
     <div class="container-bg">
         <h1>GALERIA</h1>
     </div>
-    <svg class="svg-adicionar" width="53" height="53" viewBox="0 0 53 53" fill="none"
+    <svg (click)="openDialog()" class="svg-adicionar" width="53" height="53" viewBox="0 0 53 53" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d_46_2270)">
             <rect x="4" width="45" height="45" rx="4" fill="#1E2E79" />
@@ -28,16 +28,10 @@
 
     <div class="container-clientes">
         @for (client of itens; track $index; let i = $index) {
-            <app-card-galeria-adm
-                [comment]="client.comentario"
-                [name]="client.nome"
-                [path]="client.img"
-                [index]="i"
-                (deleteClientEmmit)="remove($event)"
-            />
+        <app-card-galeria-adm [comment]="client.comentario" [name]="client.nome" [path]="client.img" [index]="i"
+            (deleteClientEmmit)="remove($event)" />
         }
     </div>
-
 </main>
 
 <app-footer-adm />

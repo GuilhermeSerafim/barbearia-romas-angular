@@ -1,6 +1,12 @@
 {
   "galeria": [
     {
+      "id": "1",
+      "img": "/cliente1.png",
+      "comentario": "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
+      "nome": "João S "
+    },
+    {
       "id": "2",
       "img": "/cliente2.png",
       "comentario": "O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!",
@@ -11,6 +17,18 @@
       "img": "/cliente3.png",
       "comentario": "Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência.",
       "nome": "Letícia M"
+    },
+    {
+      "id": "45b2",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVhXsyFJkKUJl8o2rp6aRt-7L_-wJvcZ_0Ggl1wxaW0G47p63DgtzG0MVTPkLXC8r6BDI&usqp=CAU",
+      "comentario": "Uh uh uh ah ah!",
+      "nome": "Monkey P"
+    },
+    {
+      "id": "1b94",
+      "img": "https://instagram.fcgh38-1.fna.fbcdn.net/v/t51.29350-15/489622055_4034303796799735_4936638513551909739_n.heic?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwODB4MTA4MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fcgh38-1.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2QF07Mv7FV9D9SlNo5IXscMIb3FqQp8WFlDugwi3WIws3MK0owjjlXjJLIxVtwMO1vA&_nc_ohc=dMHe5bfwTckQ7kNvwGQr6V0&_nc_gid=v6n1OiEAKlsfNWwXc0BLfg&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzYwODQzOTU4ODE4MTI3MzE0OA%3D%3D.3-ccb7-5&oh=00_AfJDZv13E6zFIUmMLioVJzB5KwavDIFsTCLZt5JYos7w-A&oe=68280D05&_nc_sid=7a9f4b",
+      "comentario": "Testando",
+      "nome": "Teste"
     }
   ]
 }

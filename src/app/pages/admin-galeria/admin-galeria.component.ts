@@ -4,6 +4,7 @@ import { NavbarAdmComponent } from "../../components/adm/navbar-adm/navbar-adm.c
 import { CardGaleriaAdmComponent } from "../../components/card-galeria-adm/card-galeria-adm.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GaleriaItem, GaleriaService } from '../../services/galeria.service';
+import { AddGaleriaDialogComponent } from '../../components/add-galeria-dialog/add-galeria-dialog.component';
 
 @Component({
   selector: 'app-admin-galeria',
@@ -21,7 +22,7 @@ export class AdminGaleriaComponent implements OnInit {
   ngOnInit(): void {
     this.load();
   }
-  
+
   load() {
     this.galeria.getAll().subscribe(data => this.itens = data);
   }
@@ -30,4 +31,21 @@ export class AdminGaleriaComponent implements OnInit {
     this.galeria.delete(id)
       .subscribe(() => this.load());
   }
+
+  readonly dialog = inject(MatDialog);
+
+  openDialog() {
+    // 1) Abre o diálogo
+    const ref = this.dialog.open(AddGaleriaDialogComponent, {
+      width: '400px'
+    });
+
+    // 2) Quando ele fecha, verifica se retornou `true` e recarrega
+    ref.afterClosed().subscribe(didCreate => {
+      if (didCreate) {
+        this.load();
+      }
+    });
+  }
+
 }

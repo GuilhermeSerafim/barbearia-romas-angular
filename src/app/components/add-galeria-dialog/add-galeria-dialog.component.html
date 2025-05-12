@@ -1,0 +1,30 @@
+<div class="container-add">
+    <h1 mat-dialog-title>Adicionar à Galeria</h1>
+    <form class="container-add">
+        <mat-form-field class="add-item">
+            <mat-label>Caminho da imagem</mat-label>
+            <input name="caminhoImagem" [(ngModel)]="caminhoImagem" matInput placeholder="Ex. suaimagem.png">
+        </mat-form-field>
+
+        <mat-form-field class="add-item">
+            <mat-label>Nome</mat-label>
+            <input name="nome" [(ngModel)]="nome" matInput placeholder="Ex. Guiler S">
+        </mat-form-field>
+
+        <mat-form-field class="add-item">
+            <mat-label>Comentário</mat-label>
+            <textarea name="comentario" [(ngModel)]="comentario" matInput placeholder="Ex. Me senti bem..."></textarea>
+        </mat-form-field>
+    </form>
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+        <button 
+            mat-raised-button 
+            [disabled]="todosOsCamposEstaoPreenchidos()" 
+            color="primary"
+            (click)="adicionarItemGaleria()"
+        >
+            Adicionar
+        </button>
+    </mat-dialog-actions>
+</div>
