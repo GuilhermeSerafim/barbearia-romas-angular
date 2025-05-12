@@ -27,7 +27,6 @@ export class AdminGaleriaComponent implements OnInit {
   }
 
   remove(id: number) {
-    console.log(id);
     this.galeria.delete(id)
       .subscribe(() => this.load());
   }
