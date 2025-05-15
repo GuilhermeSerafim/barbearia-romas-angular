@@ -58,13 +58,6 @@ export class AdminGaleriaComponent implements OnInit {
     });
 
     // ao fechar, se retornar o objeto atualizado, envia o PUT
-    ref.afterClosed().subscribe((itemGaleria: any) => {
-      console.log("teste");
-      console.log(itemGaleria)
-      // if (itemGaleria) {
-      //   this.galeria.update(atualizado)
-      //     .subscribe(() => this.load());
-      // }
-    });
+    ref.afterClosed().subscribe((itemGaleria: GaleriaItem) => this.galeria.update(itemGaleria).subscribe(() => this.load()));
   }
 }

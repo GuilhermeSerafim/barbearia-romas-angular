@@ -12,7 +12,6 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { GaleriaService } from '../../services/galeria.service';
 import { AddGaleriaDialogComponent } from '../add-galeria-dialog/add-galeria-dialog.component';
 import { GaleriaItem } from '../../interfaces/galeria-item';
 
@@ -25,11 +24,9 @@ import { GaleriaItem } from '../../interfaces/galeria-item';
 })
 export class AlterGaleriaDialogComponent {
   constructor(
-    private galeria: GaleriaService,
     private dialogRef: MatDialogRef<AddGaleriaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: GaleriaItem
   ) { }
-
 
   ngOnInit(): void {
     this.itemGaleria = { ...this.data };
@@ -41,9 +38,6 @@ export class AlterGaleriaDialogComponent {
     comentario: undefined,
     nome: undefined
   };
-
-  todosOsCamposEstaoPreenchidos = () => !this.itemGaleria.img || !this.itemGaleria.nome || !this.itemGaleria.comentario;
-
 
   alterarItemGaleria = () => this.dialogRef.close(this.itemGaleria);
 }
