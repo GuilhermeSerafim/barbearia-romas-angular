@@ -22,4 +22,8 @@ export class GaleriaService {
   create(item: Omit<GaleriaItem, 'id'>) {
     return this.http.post<GaleriaItem>(this.apiUrl, item);
   }
+
+  update(item: GaleriaItem): Observable<GaleriaItem> {
+    return this.http.put<GaleriaItem>(`${this.apiUrl}/${item.id}`, item);
+  }
 }

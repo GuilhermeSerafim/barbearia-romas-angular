@@ -29,7 +29,7 @@
     <div class="container-clientes">
         @for (client of itens; track $index; let i = $index) {
         <app-card-galeria-adm [comment]="client.comentario" [name]="client.nome" [path]="client.img" [index]="i"
-            (deleteClientEmmit)="remove($event)" [idItemGaleria]="client.id" />
+            [idItemGaleria]="client.id" (idClientEmmit)="remove($event)" (objClientEmmit)="alter($event)"   />
         }
     </div>
 </main>

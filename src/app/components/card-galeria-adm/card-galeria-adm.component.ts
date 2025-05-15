@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { GaleriaItem } from '../../interfaces/galeria-item';
 
 @Component({
   selector: 'app-card-galeria-adm',
@@ -14,11 +15,15 @@ export class CardGaleriaAdmComponent {
   @Input({ alias: 'comment', required: true }) comment: string | undefined;
   @Input({ alias: 'name', required: true }) name: string | undefined;
   @Input({ alias: 'idItemGaleria', required: true }) idItemGaleria: string | undefined;
-  @Output() deleteClientEmmit = new EventEmitter<string>();
+  @Output() idClientEmmit = new EventEmitter<string>();
+  @Output() objClientEmmit = new EventEmitter<GaleriaItem>();
+  
   emitirItemASerExcluido() {
-    this.deleteClientEmmit.emit(this.idItemGaleria);
+    this.idClientEmmit.emit(this.idItemGaleria);
   }
-  editarItemGaleria() {
-    throw new Error('Method not implemented.');
+
+  emitirItemGaleriaASerAlterado() {
+    this.objClientEmmit.emit({ id: this.idItemGaleria, comentario: this.comment, img: this.pathimg, nome: this.name });
   }
+
 }
