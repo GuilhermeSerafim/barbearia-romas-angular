@@ -13,10 +13,10 @@
     @Input({ alias: 'comment', required: true }) comment: string = "";
     @Input({ alias: 'name', required: true }) name: string = "";
     @Input({ alias: 'index', required: true }) index: number = 0;
-    @Input() teste: string = "";
-    @Output() deleteClientEmmit = new EventEmitter<number>();
+    @Input() idItemGaleria: string = "";
+    @Output() deleteClientEmmit = new EventEmitter<string>();
     emitirItemASerExcluido() {
-      this.deleteClientEmmit.emit(this.index);
+      this.deleteClientEmmit.emit(this.idItemGaleria);
     }
     editarItemGaleria() {
       throw new Error('Method not implemented.');

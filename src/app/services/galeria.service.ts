@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap, take } from 'rxjs';
 
 export interface GaleriaItem {
-  id: number,
+  id: string,
   img: string,
   comentario: string,
   nome: string,
@@ -21,14 +21,16 @@ export class GaleriaService {
     return this.http.get<GaleriaItem[]>(this.apiUrl);
   }
 
-  delete(id: number): Observable<void> {
+  // O json-server converte meus id para string...
+  delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
 
   // O Omit<T, K> é um tipo utilitário do TypeScript (e portanto usado em projetos Angular/TS) que te 
   // Permite criar um novo tipo a partir de outro, removendo uma ou mais propriedades.
-  create(item: Omit <GaleriaItem, 'id'>) {
-    return this.http.post<GaleriaItem>(`${this.apiUrl}`, item);
-  }
+  // create() {
+    
+  // }
+
 }

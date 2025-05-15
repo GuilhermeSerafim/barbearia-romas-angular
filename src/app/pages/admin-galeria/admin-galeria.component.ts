@@ -27,7 +27,8 @@ export class AdminGaleriaComponent implements OnInit {
     this.galeria.getAll().subscribe(data => this.itens = data);
   }
 
-  remove(id: number) {
+  remove(id: string) {
+    console.log(id)
     this.galeria.delete(id)
       .subscribe(() => this.load());
   }
