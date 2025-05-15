@@ -12,6 +12,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { GaleriaService } from '../../services/galeria.service';
+import { GaleriaItem } from '../../interfaces/galeria-item';
 
 @Component({
   selector: 'app-add-galeria-dialog',
@@ -26,32 +27,31 @@ export class AddGaleriaDialogComponent {
     private galeria: GaleriaService,
     private dialogRef: MatDialogRef<AddGaleriaDialogComponent>
   ) { }
-  caminhoImagem: string = "";
-  comentario: string = "";
-  nome: string = "";
 
+  itemGaleria: GaleriaItem = {
+    id: undefined,
+    img: undefined,
+    comentario: undefined,
+    nome: undefined
+  };
 
-  todosOsCamposEstaoPreenchidos = () => !this.caminhoImagem || !this.nome || !this.comentario;
+  todosOsCamposEstaoPreenchidos = () => !this.itemGaleria.img || !this.itemGaleria.nome || !this.itemGaleria.comentario;
 
-  // adicionarItemGaleria() {
-  //   // 1) Dispara a requisição POST para criar um novo item na galeria
-  //   this.galeria.create({
-  //     img: this.caminhoImagem,
-  //     comentario: this.comentario,
-  //     nome: this.nome
-  //   })
-  //     // 2) Inscreve-se (subscribe) no Observable retornado pelo HttpClient
-  //     .subscribe({
-  //       next: () => {
-  //         // 3a) Quando o servidor confirma o POST com sucesso,
-  //         //     fecha o diálogo e envia `true` para o componente pai
-  //         this.dialogRef.close(true);
-  //       },
-  //       error: err => {
-  //         // 3b) Se der erro na requisição, cai aqui:
-  //         console.error('Falha ao criar item de galeria', err);
-  //         // Opcional: você pode disparar um Snackbar ou outro feedback visual
-  //       }
-  //     });
-  // }
+  adicionarItemGaleria() {
+    // 1) Dispara a requisição POST para criar um novo item na galeria
+    this.galeria.create(this.itemGaleria)
+      // 2) Inscreve-se (subscribe) no Observable retornado pelo HttpClient
+      .subscribe({
+        next: () => {
+          // 3a) Quando o servidor confirma o POST com sucesso,
+          //     fecha o diálogo e envia `true` para o componente pai
+          this.dialogRef.close(true);
+        },
+        error: err => {
+          // 3b) Se der erro na requisição, cai aqui:
+          console.error('Falha ao criar item de galeria', err);
+          // Opcional: você pode disparar um Snackbar ou outro feedback visual
+        }
+      });
+  }
 }

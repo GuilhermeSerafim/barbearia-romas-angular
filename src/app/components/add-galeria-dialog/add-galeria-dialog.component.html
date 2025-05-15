@@ -3,17 +3,17 @@
     <form class="container-add">
         <mat-form-field class="add-item">
             <mat-label>Caminho da imagem</mat-label>
-            <input name="caminhoImagem" [(ngModel)]="caminhoImagem" matInput placeholder="Ex. suaimagem.png">
+            <input name="caminhoImagem" [(ngModel)]="itemGaleria.img" matInput placeholder="Ex. suaimagem.png">
         </mat-form-field>
 
         <mat-form-field class="add-item">
             <mat-label>Nome</mat-label>
-            <input name="nome" [(ngModel)]="nome" matInput placeholder="Ex. Guiler S">
+            <input name="nome" [(ngModel)]="itemGaleria.nome" matInput placeholder="Ex. Guiler S">
         </mat-form-field>
 
         <mat-form-field class="add-item">
             <mat-label>Comentário</mat-label>
-            <textarea name="comentario" [(ngModel)]="comentario" matInput placeholder="Ex. Me senti bem..."></textarea>
+            <textarea name="comentario" [(ngModel)]="itemGaleria.comentario" matInput placeholder="Ex. Me senti bem..."></textarea>
         </mat-form-field>
     </form>
     <mat-dialog-actions>
@@ -22,6 +22,7 @@
             mat-raised-button 
             [disabled]="todosOsCamposEstaoPreenchidos()" 
             color="primary"
+            (click)="adicionarItemGaleria()"
         >
             Adicionar
         </button>

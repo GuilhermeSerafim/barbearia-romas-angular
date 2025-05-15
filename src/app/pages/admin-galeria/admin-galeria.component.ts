@@ -3,8 +3,9 @@ import { FooterAdmComponent } from "../../components/adm/footer-adm/footer-adm.c
 import { NavbarAdmComponent } from "../../components/adm/navbar-adm/navbar-adm.component";
 import { CardGaleriaAdmComponent } from "../../components/card-galeria-adm/card-galeria-adm.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { GaleriaItem, GaleriaService } from '../../services/galeria.service';
+import { GaleriaService } from '../../services/galeria.service';
 import { AddGaleriaDialogComponent } from '../../components/add-galeria-dialog/add-galeria-dialog.component';
+import { GaleriaItem } from '../../interfaces/galeria-item';
 
 @Component({
   selector: 'app-admin-galeria',

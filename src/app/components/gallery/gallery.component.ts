@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardGaleriaComponent } from "../card-galeria/card-galeria.component";
-import { GaleriaItem, GaleriaService } from '../../services/galeria.service';
+import { GaleriaService } from '../../services/galeria.service';
+import { GaleriaItem } from '../../interfaces/galeria-item';
 
 @Component({
   selector: 'app-gallery',
