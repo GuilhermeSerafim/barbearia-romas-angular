@@ -1,0 +1,25 @@
+<div class="container-alter">
+    <h1 mat-dialog-title>Adicionar à Galeria</h1>
+    <mat-form-field class="alter-item">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="itemGaleria.nome" matInput placeholder="Ex. Guiler S">
+    </mat-form-field>
+
+
+    <mat-form-field class="alter-item">
+        <mat-label>Comentário</mat-label>
+        <textarea [(ngModel)]="itemGaleria.comentario" matInput placeholder="Ex. Me senti bem..."></textarea>
+    </mat-form-field>
+
+
+    <mat-form-field class="alter-item">
+        <mat-label>Caminho da imagem</mat-label>
+        <input [(ngModel)]="itemGaleria.img" matInput placeholder="Ex. suaimagem.png">
+    </mat-form-field>
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="alterarItemGaleria()">
+            Alterar
+        </button>
+    </mat-dialog-actions>
+</div>

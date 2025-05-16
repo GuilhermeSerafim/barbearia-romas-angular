@@ -21,8 +21,13 @@
 
 .galeria-content {
     display: flex;
-    justify-content: space-around;
-    gap: 40px;
+    justify-content: space-evenly;
+    gap: 70px;
     flex-wrap: wrap;
+}
+
+
+.galeria-content img {
+    width: 1000px;
 }
 

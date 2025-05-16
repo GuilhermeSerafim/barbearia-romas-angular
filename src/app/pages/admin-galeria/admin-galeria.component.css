@@ -37,7 +37,8 @@
 
 .container-clientes {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     gap: 70px;
     margin-bottom: 219px;
 }

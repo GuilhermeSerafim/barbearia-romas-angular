@@ -1,0 +1,25 @@
+.container-alter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.container-alter input {
+    margin: 0 15px;
+    font-family: var(--fonte-principal);
+}
+
+.container-alter button {
+  margin: 0 30px;
+  font-family: var(--fonte-principal);
+}
+
+.container-alter h1 {
+    font-family: var(--fonte-titulo);
+}
+
+.alter-item {
+  width: 70%; /* força os campos a ocuparem toda a largura possível */
+}

@@ -1,4 +1,5 @@
-.container-clientes-item img {
+ 
+ img {
     width: 307px;
     height: 306px;
     flex-shrink: 0;
@@ -6,27 +7,27 @@
     border-radius: 4px;
     transition: transform 0.3s;
 }
-
-.container-clientes-item img:hover {
+c
+ img:hover {
     transform: scale(1.05);
 }
 
-.container-clientes-item p:nth-child(2) {
+ p:nth-child(2) {
     margin-top: 27px;
 }
 
-.container-clientes-item p {
+ p {
     font-size: 14px;
     width: 307px;
     line-height: 135.938%;
     text-align: justify;
 }
-.container-clientes-item svg {
+ svg {
     margin-top: 19px;
     transition: transform 0.3s;
 }
 
-.container-clientes-item svg:hover {
+ svg:hover {
     transform: scale(1.05);
     cursor: pointer;
 }

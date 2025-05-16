@@ -1,8 +1,12 @@
-import { Component, inject } from '@angular/core';
-import { FooterAdmComponent } from "../../components/adm/footer-adm/footer-adm.component";
-import { NavbarAdmComponent } from "../../components/adm/navbar-adm/navbar-adm.component";
+import { Component, inject, OnInit } from '@angular/core';
+import { FooterAdmComponent } from "../../components/footer-adm/footer-adm.component";
+import { NavbarAdmComponent } from "../../components/navbar-adm/navbar-adm.component";
 import { CardGaleriaAdmComponent } from "../../components/card-galeria-adm/card-galeria-adm.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { GaleriaService } from '../../services/galeria.service';
+import { AddGaleriaDialogComponent } from '../../components/add-galeria-dialog/add-galeria-dialog.component';
+import { GaleriaItem } from '../../interfaces/galeria-item';
+import { AlterGaleriaDialogComponent } from '../../components/alter-galeria-dialog/alter-galeria-dialog.component';
 
 @Component({
   selector: 'app-admin-galeria',
@@ -11,40 +15,49 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
   templateUrl: './admin-galeria.component.html',
   styleUrl: './admin-galeria.component.css'
 })
-export class AdminGaleriaComponent {
-  listClient = [
-    {
-      comment: "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
-      name: "João S",
-      img: "/cliente1.png",
-      path: "/cliente1.png",
-      alt: "Cliente João"
-    },
-    {
-      comment: "O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!",
-      name: "Cliente E",
-      img: "/cliente2.png",
-      alt: "Cliente Evelyn"
-    },
-    {
-      comment: "Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência.",
-      name: "Letícia M",
-      img: "/cliente3.png",
-      alt: "Cliente Letícia"
-    },
-  ]
-  deleteCliente(i: number) {
-    this.listClient.splice(i, 1);
+export class AdminGaleriaComponent implements OnInit {
+
+  constructor(private galeria: GaleriaService) { }
+
+  itens: GaleriaItem[] = [];
+
+  ngOnInit(): void {
+    this.load();
+  }
+
+  load() {
+    this.galeria.getAll().subscribe(data => this.itens = data);
+  }
+
+  remove(id: string) {
+    console.log(id)
+    this.galeria.delete(id)
+      .subscribe(() => this.load());
   }
 
   readonly dialog = inject(MatDialog);
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    // No lugar de AdminGaleriaComponent, colocar um componente form 
-    this.dialog.open(AdminGaleriaComponent, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
+  openDialog() {
+    // 1) Abre o diálogo
+    const ref = this.dialog.open(AddGaleriaDialogComponent, {
+      width: '400px'
     });
+
+    // 2) Quando ele fecha, verifica se retornou `true` e recarrega
+    ref.afterClosed().subscribe(didCreate => {
+      if (didCreate) {
+        this.load();
+      }
+    });
+  }
+
+  alter(itemGaleria: GaleriaItem) {
+    const ref = this.dialog.open(AlterGaleriaDialogComponent, {
+      width: '800px',
+      data: itemGaleria
+    });
+
+    // ao fechar, se retornar o objeto atualizado, envia o PUT
+    ref.afterClosed().subscribe((itemGaleria: GaleriaItem) => this.galeria.update(itemGaleria).subscribe(() => this.load()));
   }
 }
