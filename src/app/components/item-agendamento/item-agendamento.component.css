@@ -1,0 +1,133 @@
+
+/* 1) container que centraliza horizontalmente a área de tabela */
+.container-datagrid {
+    display: flex;
+    justify-content: center;
+    /* centra a tabela */
+    margin: 96px 0;
+    flex-shrink: 0;
+    /* não encolhe se o pai estiver em flex */
+}
+
+/* 2) wrapper branco com borda arredondada e sombra */
+.table-wrapper {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* para o caso de responsividade */
+}
+
+/* 3) estilo da tabela */
+.datagrid {
+    border-collapse: collapse;
+    width: 100%;
+    /* ajuste conforme seu design */
+}
+
+/* Cabeçalho escuro */
+.datagrid thead {
+    background: var(--bordo);
+}
+
+.datagrid thead th {
+    color: #fff;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    vertical-align: middle;
+    /* Alinha verticalmente ao centro */
+    padding: 8px;
+    height: 20.417px;
+    font-family: var(--fonte-titulo);
+    border-bottom: 2px solid var(--var-primary, #080704);
+    background: var(--var-secondary, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #6D1817);
+}
+
+/* Linhas e células */
+.datagrid tbody tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.datagrid .grid-line {
+    padding: 12px 16px;
+    width: 200px;
+    color: #333;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+.datagrid th:first-child,
+.datagrid td:first-child {
+    width: 70px;
+    text-align: center;
+    padding: 12px 8px;
+    vertical-align: middle;
+}
+
+.datagrid .grid-line {
+    padding: 12px 8px;
+    text-align: left;
+    vertical-align: middle;
+    width: 200px;
+    color: #333;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+/* Hover suave na linha */
+.datagrid tbody tr:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* Botão de ação */
+.btn-delete,
+.btn-alterar {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-delete::before,
+.btn-alterar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    /* cor bordô com 15% de opacidade */
+    background: rgba(109, 24, 23, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    filter: blur(4px);
+    /* espalha o círculo */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: -1;
+}
+
+.btn-delete:hover::before,
+.btn-alterar:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    /* mantém o 0.15 do RGBA, você pode remover esta linha */
+}
+
+.btn-adicionar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 5px 10px 0 0;
+    transition: transform 0.3s ease, fill 0.3s ease;
+
+}
+
+.btn-adicionar svg:hover {
+    transform: scale(1.1);
+}

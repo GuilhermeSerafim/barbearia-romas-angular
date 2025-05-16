@@ -4,7 +4,89 @@
       "id": "101",
       "comentario": "Miaumiau",
       "img": "https://i.pinimg.com/736x/3b/a7/9c/3ba79c66a9329f698800ed23a48e9564.jpg",
-      "nome": "Guiler G"
+      "nome": "Cat G"
+    }
+  ],
+  "agendamentos": [
+    {
+      "id": "1",
+      "cliente": "Felipe Oliveira",
+      "telefone": "(11) 91234-5678",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 13h"
+    },
+    {
+      "id": "2",
+      "cliente": "João Pedro Martins",
+      "telefone": "(21) 99876-5432",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 14h"
+    },
+    {
+      "id": "3",
+      "cliente": "Lucas Andrade",
+      "telefone": "(31) 91321-4567",
+      "servico": "Barba",
+      "barbeiro": "Romas",
+      "data": "19/04 - 15h"
+    },
+    {
+      "id": "4",
+      "cliente": "Gabriel Santos",
+      "telefone": "(41) 98765-4321",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 16h"
+    },
+    {
+      "id": "5",
+      "cliente": "Caio Lima",
+      "telefone": "(51) 99123-9876",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "19/04 - 17h"
+    },
+    {
+      "id": "6",
+      "cliente": "Bruno Ferreira",
+      "telefone": "(61) 91298-7345",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "19/04 - 18h"
+    },
+    {
+      "id": "7",
+      "cliente": "Gustavo Nascimento",
+      "telefone": "(71) 99812-3456",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "19/04 - 19h"
+    },
+    {
+      "id": "8",
+      "cliente": "Thiago Almeida",
+      "telefone": "(81) 91345-6789",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 20h"
+    },
+    {
+      "id": "9",
+      "cliente": "Eduardo Rezende",
+      "telefone": "(85) 99765-4321",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 21h"
+    },
+    {
+      "id": "10",
+      "cliente": "Pedro Henriqueh",
+      "telefone": "(91) 91567-8901",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "19/04 - 22h"
     }
   ]
 }

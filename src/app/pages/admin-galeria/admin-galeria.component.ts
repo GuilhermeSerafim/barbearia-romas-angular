@@ -30,7 +30,6 @@ export class AdminGaleriaComponent implements OnInit {
   }
 
   remove(id: string) {
-    console.log(id)
     this.galeria.delete(id)
       .subscribe(() => this.load());
   }
@@ -57,7 +56,7 @@ export class AdminGaleriaComponent implements OnInit {
       data: itemGaleria
     });
 
-    // ao fechar, se retornar o objeto atualizado, envia o PUT
+    // Um Observable HTTP em Angular é lazy (“frio”): nenhuma chamada ao get(), post(), etc., acontece até que você dê um subscribe(). É o subscribe que dispara a requisição de fato.
     ref.afterClosed().subscribe((itemGaleria: GaleriaItem) => this.galeria.update(itemGaleria).subscribe(() => this.load()));
   }
 }
