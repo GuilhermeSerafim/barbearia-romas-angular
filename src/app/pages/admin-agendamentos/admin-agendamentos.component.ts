@@ -6,11 +6,14 @@ import { FooterAdmComponent } from '../../components/adm/footer-adm/footer-adm.c
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AlterAgendamentoDialogComponent } from '../../components/alter-agendamento-dialog/alter-agendamento-dialog.component';
 import { CommonModule } from '@angular/common';
+import { AddAgendamentoDialogComponent } from '../../components/add-agendamento-dialog/add-agendamento-dialog.component';
+import { PhonePipe } from '../../pipes/phone.pipe';
+import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
 
 @Component({
   selector: 'app-admin-agendamentos',
   standalone: true,
-  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule],
+  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule, PhonePipe, DashIfEmptyPipe],
   templateUrl: './admin-agendamentos.component.html',
   styleUrl: './admin-agendamentos.component.css'
 })
@@ -47,4 +50,15 @@ export class AdminAgendamentosComponent implements OnInit {
       this.agendamentoService.update(itemAgendamento).subscribe(() => this.load()));
   }
 
+  adicionarItemAgendamento() {
+    const ref = this.dialog.open(AddAgendamentoDialogComponent, {
+      width: '800px'
+    });
+
+    ref.afterClosed().subscribe(didCreate => {
+      if (didCreate) {
+        this.load();
+      }
+    });
+  }
 }

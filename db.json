@@ -11,7 +11,7 @@
     {
       "id": "1",
       "cliente": "Felipe Oliveira",
-      "telefone": "(11) 91234-5678",
+      "telefone": "11912345678",
       "servico": "Corte",
       "barbeiro": "Guiler",
       "data": "2025-06-19T13:00:00",
@@ -20,7 +20,7 @@
     {
       "id": "3",
       "cliente": "Lucas Andrade",
-      "telefone": "(31) 91321-4567",
+      "telefone": "31913214567",
       "servico": "Barba",
       "barbeiro": "Romas",
       "data": "2025-06-19T15:00:00",
@@ -29,7 +29,7 @@
     {
       "id": "4",
       "cliente": "Gabriel Santos",
-      "telefone": "(41) 98765-4321",
+      "telefone": "41987654321",
       "servico": "Corte",
       "barbeiro": "Romas",
       "data": "2025-06-19T16:00:00",
@@ -38,7 +38,7 @@
     {
       "id": "5",
       "cliente": "Caio Lima",
-      "telefone": "(51) 99123-9876",
+      "telefone": "51991239876",
       "servico": "Combo",
       "barbeiro": "Romas",
       "data": "2025-06-19T17:00:00",
@@ -47,7 +47,7 @@
     {
       "id": "6",
       "cliente": "Bruno Ferreira",
-      "telefone": "(61) 91298-7345",
+      "telefone": "61912987345",
       "servico": "Combo",
       "barbeiro": "Romas",
       "data": "2025-06-19T18:00:00",
@@ -56,7 +56,7 @@
     {
       "id": "7",
       "cliente": "Gustavo Nascimento",
-      "telefone": "(71) 99812-3456",
+      "telefone": "",
       "servico": "Combo",
       "barbeiro": "Romas",
       "data": "2025-06-19T19:00:00",
@@ -65,7 +65,7 @@
     {
       "id": "8",
       "cliente": "Thiago Almeida",
-      "telefone": "(81) 91345-6789",
+      "telefone": "81913456789",
       "servico": "Corte",
       "barbeiro": "Romas",
       "data": "2025-06-19T20:00:00",
@@ -74,7 +74,7 @@
     {
       "id": "9",
       "cliente": "Eduardo Rezende",
-      "telefone": "(85) 99765-4321",
+      "telefone": "85997654321",
       "servico": "Corte",
       "barbeiro": "Romas",
       "data": "2025-06-19T21:00:00",
@@ -83,11 +83,18 @@
     {
       "id": "10",
       "cliente": "Pedro Henriqueh",
-      "telefone": "(91) 91567-8901",
+      "telefone": "91915678901",
       "servico": "Corte",
       "barbeiro": "Romas",
       "data": "2025-06-19T22:00:00",
       "horario": "22:00"
+    },
+    {
+      "id": "0b5c",
+      "cliente": "Guiler",
+      "data": "2025-05-29T03:00:00.000Z",
+      "servico": "Combo",
+      "horario": "19:00"
     }
   ]
 }

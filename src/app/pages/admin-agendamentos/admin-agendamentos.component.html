@@ -10,7 +10,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn-adicionar">
+                            <button (click)="adicionarItemAgendamento()" class="btn-adicionar">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -31,7 +31,8 @@
                     @for(itemAgendamento of itensAgendamentos; track $index; let i = $index;) {
                     <tr>
                         <td class="grid-line">
-                            <button (click)="deletarAgendamento(itemAgendamento.id)" class="btn-delete" aria-label="Excluir">
+                            <button (click)="deletarAgendamento(itemAgendamento.id)" class="btn-delete"
+                                aria-label="Excluir">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -40,7 +41,8 @@
                                 </svg>
 
                             </button>
-                            <button (click)="alterarAgendamento(itemAgendamento)" class="btn-alterar" aria-label="Alterar">
+                            <button (click)="alterarAgendamento(itemAgendamento)" class="btn-alterar"
+                                aria-label="Alterar">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -55,12 +57,12 @@
                                 </svg>
                             </button>
                         </td>
-                        <td class="grid-line">{{itemAgendamento.cliente}}</td>
-                        <td class="grid-line">{{itemAgendamento.telefone}}</td>
-                        <td class="grid-line">{{itemAgendamento.servico}}</td>
-                        <td class="grid-line">{{itemAgendamento.barbeiro}}</td>
-                        <td class="grid-line">{{itemAgendamento.data | date:'dd/MM/yyyy'}}</td>
-                        <td class="grid-line">{{itemAgendamento.horario}}</td>
+                        <td class="grid-line">{{itemAgendamento.cliente| dashIfEmpty}}</td>
+                        <td class="grid-line">{{itemAgendamento.telefone | phone| dashIfEmpty}}</td>
+                        <td class="grid-line">{{itemAgendamento.servico| dashIfEmpty}}</td>
+                        <td class="grid-line">{{itemAgendamento.barbeiro| dashIfEmpty}}</td>
+                        <td class="grid-line">{{itemAgendamento.data | date:'dd/MM/yyyy'| dashIfEmpty}}</td>
+                        <td class="grid-line">{{itemAgendamento.horario| dashIfEmpty}}</td>
                     </tr>
                     }
                 </tbody>

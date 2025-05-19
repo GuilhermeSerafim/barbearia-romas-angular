@@ -1,0 +1,44 @@
+<div class="container-add">
+    <h1 mat-dialog-title>Adicionar Agendamento</h1>
+    <div class="container-add">
+        <mat-form-field class="add-item">
+            <mat-label>Cliente</mat-label>
+            <input [(ngModel)]="itemAgendamento.cliente" matInput placeholder="Digite o nome do cliente">
+        </mat-form-field>
+        <mat-form-field class="add-item">
+            <mat-label>Telefone</mat-label>
+            <input [(ngModel)]="itemAgendamento.telefone" matInput placeholder="Digite o telefone">
+        </mat-form-field>
+        <mat-form-field class="add-item">
+            <mat-label>Servico</mat-label>
+            <input [(ngModel)]="itemAgendamento.servico" matInput placeholder="Digite o serviço">
+        </mat-form-field>
+        <mat-form-field class="add-item">
+            <mat-label>Barbeiro</mat-label>
+            <input [(ngModel)]="itemAgendamento.barbeiro" matInput placeholder="Digite o barbeiro">
+        </mat-form-field>
+
+        <mat-form-field [style.marginBottom]="'20px'" class="add-item">
+            <mat-label>Data</mat-label>
+            <input [(ngModel)]="itemAgendamento.data" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="add-item">
+            <mat-label>Horário</mat-label>
+            <input type="time" [(ngModel)]="itemAgendamento.horario" matInput placeholder="Digite o barbeiro">
+        </mat-form-field>
+
+    </div>
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+        <button mat-raised-button [disabled]="todosOsCamposEstaoPreenchidos()" color="primary"
+            (click)="adicionarItemAgendamento()">
+            Adicionar
+        </button>
+    </mat-dialog-actions>
+</div>
