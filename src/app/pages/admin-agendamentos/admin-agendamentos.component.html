@@ -7,17 +7,59 @@
     <div class="container-datagrid">
         <div class="table-wrapper">
             <table class="datagrid">
-                
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn-adicionar">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.75 11.6667H0V8.75H8.75V0H11.6667V8.75H20.4167V11.6667H11.6667V20.4167H8.75V11.6667Z"
+                                        fill="#E3E3E3" />
+                                </svg>
+                            </button>
+                        </th> <!-- coluna do ícone de ação -->
+                        <th>Cliente</th>
+                        <th>Telefone</th>
+                        <th>Serviço</th>
+                        <th>Barbeiro</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
                 <tbody>
                     @for(itemAgendamento of itensAgendamentos; track $index; let i = $index;) {
-                    <app-item-agendamento
-                        [barbeiro]="itemAgendamento.barbeiro"
-                        [data]="itemAgendamento.data"
-                        [nomeCliente]="itemAgendamento.cliente"
-                        [servico]="itemAgendamento.servico"
-                        [barbeiro]="itemAgendamento.barbeiro"
-                        [telefone]="itemAgendamento.telefone"
-                    />
+                    <tr>
+                        <td class="grid-line">
+                            <button class="btn-delete" aria-label="Excluir">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 21C6.45 21 5.97917 20.8042 5.5875 20.4125C5.19583 20.0208 5 19.55 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8042 20.0208 18.4125 20.4125C18.0208 20.8042 17.55 21 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z"
+                                        fill="#D32F2F" />
+                                </svg>
+
+                            </button>
+                            <button class="btn-alterar" aria-label="Alterar">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.5 14.55V17.0834C2.5 17.3167 2.68333 17.5 2.91667 17.5H5.45C5.55833 17.5 5.66667 17.4584 5.74167 17.375L14.8417 8.28336L11.7167 5.15836L2.625 14.25C2.54167 14.3334 2.5 14.4334 2.5 14.55ZM17.2583 4.69169L15.3083 2.74169C15.2312 2.66444 15.1397 2.60315 15.0389 2.56133C14.938 2.51951 14.83 2.49799 14.7208 2.49799C14.6117 2.49799 14.5036 2.51951 14.4028 2.56133C14.302 2.60315 14.2104 2.66444 14.1333 2.74169L12.6083 4.26669L15.7333 7.39169L17.2583 5.86669C17.3356 5.78959 17.3969 5.69802 17.4387 5.59721C17.4805 5.4964 17.502 5.38833 17.502 5.27919C17.502 5.17005 17.4805 5.06198 17.4387 4.96117C17.3969 4.86036 17.3356 4.76878 17.2583 4.69169Z"
+                                        fill="#6D1817" />
+                                    <path
+                                        d="M2.5 14.55V17.0834C2.5 17.3167 2.68333 17.5 2.91667 17.5H5.45C5.55833 17.5 5.66667 17.4584 5.74167 17.375L14.8417 8.28336L11.7167 5.15836L2.625 14.25C2.54167 14.3334 2.5 14.4334 2.5 14.55ZM17.2583 4.69169L15.3083 2.74169C15.2312 2.66444 15.1397 2.60315 15.0389 2.56133C14.938 2.51951 14.83 2.49799 14.7208 2.49799C14.6117 2.49799 14.5036 2.51951 14.4028 2.56133C14.302 2.60315 14.2104 2.66444 14.1333 2.74169L12.6083 4.26669L15.7333 7.39169L17.2583 5.86669C17.3356 5.78959 17.3969 5.69802 17.4387 5.59721C17.4805 5.4964 17.502 5.38833 17.502 5.27919C17.502 5.17005 17.4805 5.06198 17.4387 4.96117C17.3969 4.86036 17.3356 4.76878 17.2583 4.69169Z"
+                                        fill="black" fill-opacity="0.2" />
+                                    <path
+                                        d="M2.5 14.55V17.0834C2.5 17.3167 2.68333 17.5 2.91667 17.5H5.45C5.55833 17.5 5.66667 17.4584 5.74167 17.375L14.8417 8.28336L11.7167 5.15836L2.625 14.25C2.54167 14.3334 2.5 14.4334 2.5 14.55ZM17.2583 4.69169L15.3083 2.74169C15.2312 2.66444 15.1397 2.60315 15.0389 2.56133C14.938 2.51951 14.83 2.49799 14.7208 2.49799C14.6117 2.49799 14.5036 2.51951 14.4028 2.56133C14.302 2.60315 14.2104 2.66444 14.1333 2.74169L12.6083 4.26669L15.7333 7.39169L17.2583 5.86669C17.3356 5.78959 17.3969 5.69802 17.4387 5.59721C17.4805 5.4964 17.502 5.38833 17.502 5.27919C17.502 5.17005 17.4805 5.06198 17.4387 4.96117C17.3969 4.86036 17.3356 4.76878 17.2583 4.69169Z"
+                                        fill="black" fill-opacity="0.2" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td class="grid-line">{{itemAgendamento.cliente}}</td>
+                        <td class="grid-line">{{itemAgendamento.telefone}}</td>
+                        <td class="grid-line">{{itemAgendamento.servico}}</td>
+                        <td class="grid-line">{{itemAgendamento.barbeiro}}</td>
+                        <td class="grid-line">{{itemAgendamento.data}}</td>
+                    </tr>
                     }
                 </tbody>
             </table>
@@ -25,4 +67,4 @@
     </div>
 
 </main>
-<app-footer-adm/>
+<app-footer-adm />
