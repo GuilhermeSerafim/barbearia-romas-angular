@@ -1,0 +1,25 @@
+.container-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.container-add button {
+  margin: 0 15px;
+  font-family: var(--fonte-principal);
+}
+
+.container-add h1 {
+  font-family: var(--fonte-titulo);
+}
+
+.container-add input {
+  font-family: var(--fonte-principal);
+}
+
+.add-item {
+  width: 70%;
+  /* força os campos a ocuparem toda a largura possível */
+}

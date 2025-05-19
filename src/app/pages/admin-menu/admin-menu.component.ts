@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FooterAdmComponent } from "../../components/footer-adm/footer-adm.component";
-import { NavbarAdmComponent } from "../../components/navbar-adm/navbar-adm.component";
 import { Router } from '@angular/router';
+import { FooterAdmComponent } from '../../components/adm/footer-adm/footer-adm.component';
+import { NavbarAdmComponent } from '../../components/adm/navbar-adm/navbar-adm.component';
 
 @Component({
   selector: 'app-admin-menu',

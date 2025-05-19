@@ -4,7 +4,97 @@
       "id": "101",
       "comentario": "Miaumiau",
       "img": "https://i.pinimg.com/736x/3b/a7/9c/3ba79c66a9329f698800ed23a48e9564.jpg",
-      "nome": "Guiler G"
+      "nome": "Cat GUI"
+    }
+  ],
+  "agendamentos": [
+    {
+      "id": "1",
+      "cliente": "Felipe Oliveira",
+      "telefone": "11912345678",
+      "servico": "Corte",
+      "barbeiro": "Guiler",
+      "data": "2025-06-19T13:00:00",
+      "horario": "13:00"
+    },
+    {
+      "id": "3",
+      "cliente": "Lucas Andrade",
+      "telefone": "31913214567",
+      "servico": "Barba",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T15:00:00",
+      "horario": "15:00"
+    },
+    {
+      "id": "4",
+      "cliente": "Gabriel Santos",
+      "telefone": "41987654321",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T16:00:00",
+      "horario": "16:00"
+    },
+    {
+      "id": "5",
+      "cliente": "Caio Lima",
+      "telefone": "51991239876",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T17:00:00",
+      "horario": "17:00"
+    },
+    {
+      "id": "6",
+      "cliente": "Bruno Ferreira",
+      "telefone": "61912987345",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T18:00:00",
+      "horario": "18:00"
+    },
+    {
+      "id": "7",
+      "cliente": "Gustavo Nascimento",
+      "telefone": "",
+      "servico": "Combo",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T19:00:00",
+      "horario": "19:00"
+    },
+    {
+      "id": "8",
+      "cliente": "Thiago Almeida",
+      "telefone": "81913456789",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T20:00:00",
+      "horario": "20:00"
+    },
+    {
+      "id": "9",
+      "cliente": "Eduardo Rezende",
+      "telefone": "85997654321",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T21:00:00",
+      "horario": "21:00"
+    },
+    {
+      "id": "10",
+      "cliente": "Pedro Henriqueh",
+      "telefone": "91915678901",
+      "servico": "Corte",
+      "barbeiro": "Romas",
+      "data": "2025-06-19T22:00:00",
+      "horario": "22:00"
+    },
+    {
+      "id": "0b5c",
+      "cliente": "Guiler",
+      "data": "2025-05-29T03:00:00.000Z",
+      "servico": "Combo",
+      "horario": "19:00"
     }
   ]
 }

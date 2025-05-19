@@ -12,7 +12,6 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AddGaleriaDialogComponent } from '../add-galeria-dialog/add-galeria-dialog.component';
 import { GaleriaItem } from '../../interfaces/galeria-item';
 
 @Component({
@@ -24,13 +23,10 @@ import { GaleriaItem } from '../../interfaces/galeria-item';
 })
 export class AlterGaleriaDialogComponent {
   constructor(
-    private dialogRef: MatDialogRef<AddGaleriaDialogComponent>,
+    // Vamos usar a referncia desse dialog apenas para fechar o mesmo...
+    private dialogRef: MatDialogRef<AlterGaleriaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: GaleriaItem
   ) { }
-
-  ngOnInit(): void {
-    this.itemGaleria = { ...this.data };
-  }
 
   itemGaleria: GaleriaItem = {
     id: undefined,
@@ -38,6 +34,10 @@ export class AlterGaleriaDialogComponent {
     comentario: undefined,
     nome: undefined
   };
+
+  ngOnInit(): void {
+    this.itemGaleria = { ...this.data };
+  }
 
   alterarItemGaleria = () => this.dialogRef.close(this.itemGaleria);
 }

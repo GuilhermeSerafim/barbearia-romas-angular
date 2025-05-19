@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { GaleriaItem } from '../interfaces/galeria-item';
 
 
