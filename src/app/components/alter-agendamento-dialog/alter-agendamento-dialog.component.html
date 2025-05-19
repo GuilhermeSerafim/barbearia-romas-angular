@@ -1,0 +1,41 @@
+<div class="container-alter">
+    <h1 mat-dialog-title>Alterar Agendamento</h1>
+    <mat-form-field class="alter-item">
+        <mat-label>Cliente</mat-label>
+        <input [(ngModel)]="itemAgendamento.cliente" matInput placeholder="Digite o nome do cliente">
+    </mat-form-field>
+    <mat-form-field class="alter-item">
+        <mat-label>Telefone</mat-label>
+        <input [(ngModel)]="itemAgendamento.telefone" matInput placeholder="Digite o telefone">
+    </mat-form-field>
+    <mat-form-field class="alter-item">
+        <mat-label>Servico</mat-label>
+        <input [(ngModel)]="itemAgendamento.servico" matInput placeholder="Digite o serviço">
+    </mat-form-field>
+    <mat-form-field class="alter-item">
+        <mat-label>Barbeiro</mat-label>
+        <input [(ngModel)]="itemAgendamento.barbeiro" matInput placeholder="Digite o barbeiro">
+    </mat-form-field>
+
+    <mat-form-field [style.marginBottom]="'20px'" class="alter-item">
+        <mat-label>Data</mat-label>
+        <input [(ngModel)]="itemAgendamento.data" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="alter-item">
+        <mat-label>Horário</mat-label>
+        <input type="time" [(ngModel)]="itemAgendamento.horario" matInput placeholder="Digite o barbeiro">
+    </mat-form-field>
+
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="alterarItemAgendamento()">
+            Alterar
+        </button>
+    </mat-dialog-actions>
+</div>

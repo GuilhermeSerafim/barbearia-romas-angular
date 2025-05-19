@@ -14,7 +14,7 @@ export class AgendamentosService {
     return this.http.get<AgendamentoItem[]>(this.apiUrl);
   }
 
-  delete(id: string): Observable<void> {
+  delete(id: string | undefined): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 

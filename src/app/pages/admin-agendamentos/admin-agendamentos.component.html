@@ -24,13 +24,14 @@
                         <th>Serviço</th>
                         <th>Barbeiro</th>
                         <th>Data</th>
+                        <th>Horário</th>
                     </tr>
                 </thead>
                 <tbody>
                     @for(itemAgendamento of itensAgendamentos; track $index; let i = $index;) {
                     <tr>
                         <td class="grid-line">
-                            <button class="btn-delete" aria-label="Excluir">
+                            <button (click)="deletarAgendamento(itemAgendamento.id)" class="btn-delete" aria-label="Excluir">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -39,7 +40,7 @@
                                 </svg>
 
                             </button>
-                            <button class="btn-alterar" aria-label="Alterar">
+                            <button (click)="alterarAgendamento(itemAgendamento)" class="btn-alterar" aria-label="Alterar">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -58,7 +59,8 @@
                         <td class="grid-line">{{itemAgendamento.telefone}}</td>
                         <td class="grid-line">{{itemAgendamento.servico}}</td>
                         <td class="grid-line">{{itemAgendamento.barbeiro}}</td>
-                        <td class="grid-line">{{itemAgendamento.data}}</td>
+                        <td class="grid-line">{{itemAgendamento.data | date:'dd/MM/yyyy'}}</td>
+                        <td class="grid-line">{{itemAgendamento.horario}}</td>
                     </tr>
                     }
                 </tbody>

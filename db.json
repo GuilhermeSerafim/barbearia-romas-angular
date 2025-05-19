@@ -4,7 +4,7 @@
       "id": "101",
       "comentario": "Miaumiau",
       "img": "https://i.pinimg.com/736x/3b/a7/9c/3ba79c66a9329f698800ed23a48e9564.jpg",
-      "nome": "Cat G"
+      "nome": "Cat GUI"
     }
   ],
   "agendamentos": [
@@ -13,16 +13,9 @@
       "cliente": "Felipe Oliveira",
       "telefone": "(11) 91234-5678",
       "servico": "Corte",
-      "barbeiro": "Romas",
-      "data": "19/04 - 13h"
-    },
-    {
-      "id": "2",
-      "cliente": "João Pedro Martins",
-      "telefone": "(21) 99876-5432",
-      "servico": "Corte",
-      "barbeiro": "Romas",
-      "data": "19/04 - 14h"
+      "barbeiro": "Guiler",
+      "data": "2025-06-19T13:00:00",
+      "horario": "13:00"
     },
     {
       "id": "3",
@@ -30,7 +23,8 @@
       "telefone": "(31) 91321-4567",
       "servico": "Barba",
       "barbeiro": "Romas",
-      "data": "19/04 - 15h"
+      "data": "2025-06-19T15:00:00",
+      "horario": "15:00"
     },
     {
       "id": "4",
@@ -38,7 +32,8 @@
       "telefone": "(41) 98765-4321",
       "servico": "Corte",
       "barbeiro": "Romas",
-      "data": "19/04 - 16h"
+      "data": "2025-06-19T16:00:00",
+      "horario": "16:00"
     },
     {
       "id": "5",
@@ -46,7 +41,8 @@
       "telefone": "(51) 99123-9876",
       "servico": "Combo",
       "barbeiro": "Romas",
-      "data": "19/04 - 17h"
+      "data": "2025-06-19T17:00:00",
+      "horario": "17:00"
     },
     {
       "id": "6",
@@ -54,7 +50,8 @@
       "telefone": "(61) 91298-7345",
       "servico": "Combo",
       "barbeiro": "Romas",
-      "data": "19/04 - 18h"
+      "data": "2025-06-19T18:00:00",
+      "horario": "18:00"
     },
     {
       "id": "7",
@@ -62,7 +59,8 @@
       "telefone": "(71) 99812-3456",
       "servico": "Combo",
       "barbeiro": "Romas",
-      "data": "19/04 - 19h"
+      "data": "2025-06-19T19:00:00",
+      "horario": "19:00"
     },
     {
       "id": "8",
@@ -70,7 +68,8 @@
       "telefone": "(81) 91345-6789",
       "servico": "Corte",
       "barbeiro": "Romas",
-      "data": "19/04 - 20h"
+      "data": "2025-06-19T20:00:00",
+      "horario": "20:00"
     },
     {
       "id": "9",
@@ -78,7 +77,8 @@
       "telefone": "(85) 99765-4321",
       "servico": "Corte",
       "barbeiro": "Romas",
-      "data": "19/04 - 21h"
+      "data": "2025-06-19T21:00:00",
+      "horario": "21:00"
     },
     {
       "id": "10",
@@ -86,7 +86,8 @@
       "telefone": "(91) 91567-8901",
       "servico": "Corte",
       "barbeiro": "Romas",
-      "data": "19/04 - 22h"
+      "data": "2025-06-19T22:00:00",
+      "horario": "22:00"
     }
   ]
 }

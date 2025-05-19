@@ -5,4 +5,5 @@ export interface AgendamentoItem {
     servico: string | undefined,
     barbeiro: string | undefined,
     data:  string | undefined ,
+    horario: string | undefined
 }
