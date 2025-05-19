@@ -21,7 +21,6 @@
         <mat-form-field [style.marginBottom]="'20px'" class="add-item">
             <mat-label>Data</mat-label>
             <input [(ngModel)]="itemAgendamento.data" matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker">
                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
