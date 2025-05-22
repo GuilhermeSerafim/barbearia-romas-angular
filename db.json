@@ -2,9 +2,21 @@
   "galeria": [
     {
       "id": "101",
-      "comentario": "Miaumiau",
-      "img": "https://i.pinimg.com/736x/3b/a7/9c/3ba79c66a9329f698800ed23a48e9564.jpg",
-      "nome": "Cat GUI"
+      "comentario": "Sai daqui me sentindo outro cara, corte alinhado e barba na régua.",
+      "img": "https://barbearia-romas.vercel.app/img/cliente1.png",
+      "nome": "João S"
+    },
+    {
+      "id": "102",
+      "comentario": "O corte ficou simplesmente perfeito! O Romário manda muito na tesoura, super recomendo!",
+      "img": "https://barbearia-romas.vercel.app/img/cliente2.png",
+      "nome": "Evelyn O"
+    },
+    {
+      "id": "103",
+      "comentario": "Levei meu filho pra cortar o cabelo e fiquei impressionado com o cuidado e paciência",
+      "img": "https://barbearia-romas.vercel.app/img/cliente3.png",
+      "nome": "Letícia M"
     }
   ],
   "agendamentos": [
@@ -88,13 +100,6 @@
       "barbeiro": "Romas",
       "data": "2025-06-19T22:00:00",
       "horario": "22:00"
-    },
-    {
-      "id": "0b5c",
-      "cliente": "Guiler",
-      "data": "2025-05-29T03:00:00.000Z",
-      "servico": "Combo",
-      "horario": "19:00"
     }
   ]
 }
