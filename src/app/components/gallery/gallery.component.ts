@@ -20,6 +20,9 @@ export class GalleryComponent implements OnInit {
   }
 
   load() {
-    this.galeria.getAll().subscribe(data => this.itens = data);
+    this.galeria.getAll().subscribe(data => {
+      console.log( this.itens = data)
+      return data
+    });
   }
 }

@@ -8,7 +8,7 @@ import { GaleriaItem } from '../interfaces/galeria-item';
   providedIn: 'root'
 })
 export class GaleriaService {
-  private apiUrl = 'http://localhost:3000/galeria';
+  private apiUrl = 'http://localhost:5010/galeria';
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<GaleriaItem[]> {
