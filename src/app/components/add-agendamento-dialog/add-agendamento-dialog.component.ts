@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { AgendamentosService } from '../../services/agendamentos.service';
 import { AgendamentoItem } from '../../interfaces/agendamento-item';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-add-agendamento-dialog',
@@ -17,7 +18,7 @@ import { AgendamentoItem } from '../../interfaces/agendamento-item';
     provideNativeDateAdapter(),
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ],
-  imports: [MatIconModule, MatDatepickerModule, MatDialogTitle, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule, MatFormFieldModule, MatInputModule],
+  imports: [MatIconModule, MatDatepickerModule, MatDialogTitle, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './add-agendamento-dialog.component.html',
   styleUrl: './add-agendamento-dialog.component.css'
 })
@@ -56,4 +57,8 @@ export class AddAgendamentoDialogComponent {
         }
       });
   }
+
+  servicos = [
+    "Combo", "Corte", "Barba e Bigode"
+  ];
 }

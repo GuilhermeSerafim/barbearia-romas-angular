@@ -10,8 +10,12 @@
             <input [(ngModel)]="itemAgendamento.telefone" matInput placeholder="Digite o telefone">
         </mat-form-field>
         <mat-form-field class="add-item">
-            <mat-label>Servico</mat-label>
-            <input [(ngModel)]="itemAgendamento.servico" matInput placeholder="Digite o serviço">
+            <mat-label>Selecionar serviço</mat-label>
+            <mat-select [(ngModel)]="itemAgendamento.servico">
+                @for (servico of servicos; track servico) {
+                <mat-option [value]="servico">{{servico}}</mat-option>
+                }
+            </mat-select>
         </mat-form-field>
         <mat-form-field class="add-item">
             <mat-label>Barbeiro</mat-label>
@@ -29,7 +33,7 @@
 
         <mat-form-field class="add-item">
             <mat-label>Horário</mat-label>
-            <input type="time" [(ngModel)]="itemAgendamento.horario" matInput placeholder="Digite o barbeiro">
+            <input type="time" [(ngModel)]="itemAgendamento.horario" matInput placeholder="Digite o horário">
         </mat-form-field>
 
     </div>
