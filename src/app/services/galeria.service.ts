@@ -8,7 +8,7 @@ import { GaleriaItem } from '../interfaces/galeria-item';
   providedIn: 'root'
 })
 export class GaleriaService {
-  private apiUrl = 'http://localhost:5010/galeria';
+  private apiUrl = 'https://barbearia-romas-api.onrender.com/galeria';
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<GaleriaItem[]> {

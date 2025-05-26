@@ -7,7 +7,7 @@ import { AgendamentoItem } from '../interfaces/agendamento-item';
   providedIn: 'root'
 })
 export class AgendamentosService {
-  private apiUrl = 'http://localhost:5010/agendamentos';
+  private apiUrl = 'https://barbearia-romas-api.onrender.com/agendamentos';
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<AgendamentoItem[]> {
