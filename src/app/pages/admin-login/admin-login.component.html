@@ -1,16 +1,19 @@
 <div class="login-wrapper">
-    <app-navbar-adm></app-navbar-adm>
-  
-    <main class="login-main">
-      <div class="container">
-        <h1 class="h1adm">ADMINISTRADOR</h1>
-        <div class="texto-u-s">
-          <input type="text" placeholder="Usuário" />
-          <input type="password" placeholder="Senha" />
-          <button class="button-entrar" (click)="entrar()">Entrar</button>
-        </div>
+  <app-navbar-adm></app-navbar-adm>
+
+  <main class="login-main">
+    <div class="container">
+      <h1 class="h1adm">ADMINISTRADOR</h1>
+      <div class="texto-u-s">
+        <input type="text" placeholder="Usuário" [(ngModel)]="user" />
+        <input type="password" placeholder="Senha" [(ngModel)]="password" />
+        <button class="button-entrar" (click)="onSubmit()">Entrar</button>
+        @if(errorMsg) {
+        <p class="error">{{errorMsg}}</p>
+        }
       </div>
-    </main>
-  
-    <app-footer-adm></app-footer-adm>
-  </div>
+    </div>
+  </main>
+
+  <app-footer-adm></app-footer-adm>
+</div>
