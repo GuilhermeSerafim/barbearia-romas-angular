@@ -5,6 +5,9 @@
     </div>
 
     <div class="container-datagrid">
+        @if(carregando) {
+            <mat-spinner></mat-spinner>
+        } @else {
         <div class="table-wrapper">
             <table class="datagrid">
                 <thead>
@@ -68,6 +71,7 @@
                 </tbody>
             </table>
         </div>
+        }
     </div>
 
 </main>

@@ -9,15 +9,17 @@ import { CommonModule } from '@angular/common';
 import { AddAgendamentoDialogComponent } from '../../components/add-agendamento-dialog/add-agendamento-dialog.component';
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-admin-agendamentos',
   standalone: true,
-  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule, PhonePipe, DashIfEmptyPipe],
+  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule, PhonePipe, DashIfEmptyPipe, MatProgressSpinnerModule],
   templateUrl: './admin-agendamentos.component.html',
   styleUrl: './admin-agendamentos.component.css'
 })
 export class AdminAgendamentosComponent implements OnInit {
+  carregando: boolean = true;
 
   constructor(private agendamentoService: AgendamentosService) { }
 
@@ -30,7 +32,16 @@ export class AdminAgendamentosComponent implements OnInit {
   }
 
   load() {
-    this.agendamentoService.getAll().subscribe(data => this.itensAgendamentos = data);
+    this.agendamentoService.getAll().subscribe({
+      next: data => {
+        this.itensAgendamentos = data;
+        this.carregando = false;
+      },
+      error: err => {
+        console.error(err);
+        this.carregando = false;
+      }
+    });
   }
 
   deletarAgendamento(id: string | undefined) {

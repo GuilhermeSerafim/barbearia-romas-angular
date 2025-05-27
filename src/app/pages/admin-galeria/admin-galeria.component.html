@@ -27,9 +27,16 @@
     </svg>
 
     <div class="container-clientes">
+        @if(!carregando) {
+            <div>
+                <mat-spinner></mat-spinner>
+            </div>
+        }@else {
+
         @for (client of itens; track $index; let i = $index) {
         <app-card-galeria-adm [comment]="client.comentario" [name]="client.nome" [path]="client.img" [index]="i"
-            [idItemGaleria]="client.id" (idClientEmmit)="remove($event)" (objClientEmmit)="alter($event)"   />
+            [idItemGaleria]="client.id" (idClientEmmit)="remove($event)" (objClientEmmit)="alter($event)" />
+        }
         }
     </div>
 </main>

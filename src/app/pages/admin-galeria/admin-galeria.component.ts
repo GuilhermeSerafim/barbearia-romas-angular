@@ -7,15 +7,17 @@ import { GaleriaItem } from '../../interfaces/galeria-item';
 import { AlterGaleriaDialogComponent } from '../../components/alter-galeria-dialog/alter-galeria-dialog.component';
 import { FooterAdmComponent } from '../../components/adm/footer-adm/footer-adm.component';
 import { NavbarAdmComponent } from '../../components/adm/navbar-adm/navbar-adm.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-admin-galeria',
   standalone: true,
-  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent, MatDialogModule],
+  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent, MatDialogModule, MatProgressSpinnerModule],
   templateUrl: './admin-galeria.component.html',
   styleUrl: './admin-galeria.component.css'
 })
 export class AdminGaleriaComponent implements OnInit {
+  carregando: boolean = true;
 
   constructor(private galeria: GaleriaService) { }
 
@@ -33,7 +35,16 @@ export class AdminGaleriaComponent implements OnInit {
   }
 
   load() {
-    this.galeria.getAll().subscribe(data => this.itens = data);
+    this.galeria.getAll().subscribe({
+      next: data => {
+        this.itens = data;
+        this.carregando = false;
+      },
+      error: err => {
+        console.error(err);
+        this.carregando = false;
+      }
+    });
   }
 
   readonly dialog = inject(MatDialog);
