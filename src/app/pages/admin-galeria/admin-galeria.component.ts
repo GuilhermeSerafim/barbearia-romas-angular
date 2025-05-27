@@ -56,6 +56,11 @@ export class AdminGaleriaComponent implements OnInit {
       data: itemGaleriaParam
     });
 
-    ref.afterClosed().subscribe((itemGaleria: GaleriaItem) => this.galeria.update(itemGaleria).subscribe(() => this.load()));
+    ref.afterClosed().subscribe((updatedItem: GaleriaItem | undefined) => {
+      if (updatedItem?.id) {
+        this.galeria.update(updatedItem)
+          .subscribe(() => this.load());
+      }
+    });
   }
 }

@@ -8,6 +8,7 @@ import { AgendamentoItem } from '../../interfaces/agendamento-item';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-alter-agendamento-dialog',
@@ -16,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
     provideNativeDateAdapter(),
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ],
-  imports: [MatIconModule, MatDatepickerModule, MatDialogTitle, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule, MatFormFieldModule, MatInputModule],
+  imports: [MatIconModule, MatDatepickerModule, MatDialogTitle, MatDialogActions, MatDialogClose, MatButtonModule, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule],
+
   templateUrl: './alter-agendamento-dialog.component.html',
   styleUrl: './alter-agendamento-dialog.component.css'
 })
@@ -36,9 +38,12 @@ export class AlterAgendamentoDialogComponent {
     horario: undefined
   }
 
+  servicos = [
+    "Combo", "Corte", "Barba e Bigode"
+  ];
+  
   ngOnInit(): void {
     this.itemAgendamento = { ...this.data };
   }
-
   alterarItemAgendamento = () => this.dialogRef.close(this.itemAgendamento);
 }

@@ -46,8 +46,11 @@ export class AdminAgendamentosComponent implements OnInit {
       data: itemAgendamento // Inject
     });
 
-    ref.afterClosed().subscribe((itemAgendamento: AgendamentoItem) =>
-      this.agendamentoService.update(itemAgendamento).subscribe(() => this.load()));
+    ref.afterClosed().subscribe((itemAgendamento: AgendamentoItem | undefined) => {
+      if (itemAgendamento?.id) {
+        this.agendamentoService.update(itemAgendamento).subscribe(() => this.load());
+      }
+    });
   }
 
   adicionarItemAgendamento() {

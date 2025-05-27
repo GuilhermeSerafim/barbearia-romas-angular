@@ -17,7 +17,7 @@
         <input [(ngModel)]="itemGaleria.img" matInput placeholder="Ex. suaimagem.png">
     </mat-form-field>
     <mat-dialog-actions>
-        <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>
+        <button mat-raised-button [mat-dialog-close]="false" color="warn">Cancelar</button>
         <button mat-raised-button color="primary" (click)="alterarItemGaleria()">
             Alterar
         </button>
