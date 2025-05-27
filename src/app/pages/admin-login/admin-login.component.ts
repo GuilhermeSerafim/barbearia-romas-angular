@@ -36,8 +36,8 @@ export class AdminLoginComponent {
             this.errorMsg = 'Credenciais incorretas';
           }
         },
-        error: () => {
-          this.errorMsg = 'Erro ao conectar com o servidor';
+        error: (err) => {
+          this.errorMsg = err.error.message ?? 'Erro ao conectar com o servidor';
         }
       })
   }
