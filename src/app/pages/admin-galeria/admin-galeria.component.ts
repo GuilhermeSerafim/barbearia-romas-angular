@@ -7,17 +7,20 @@ import { GaleriaItem } from '../../interfaces/galeria-item';
 import { AlterGaleriaDialogComponent } from '../../components/alter-galeria-dialog/alter-galeria-dialog.component';
 import { FooterAdmComponent } from '../../components/adm/footer-adm/footer-adm.component';
 import { NavbarAdmComponent } from '../../components/adm/navbar-adm/navbar-adm.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-galeria',
   standalone: true,
-  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent, MatDialogModule],
+  imports: [FooterAdmComponent, NavbarAdmComponent, CardGaleriaAdmComponent, MatDialogModule, MatProgressSpinnerModule],
   templateUrl: './admin-galeria.component.html',
   styleUrl: './admin-galeria.component.css'
 })
 export class AdminGaleriaComponent implements OnInit {
+  carregando: boolean = true;
 
-  constructor(private galeria: GaleriaService) { }
+  constructor(private galeria: GaleriaService, private snackBar: MatSnackBar) { }
 
   itens: GaleriaItem[] = [];
 
@@ -30,10 +33,22 @@ export class AdminGaleriaComponent implements OnInit {
       .subscribe(() =>
         this.load() //  recarrega os dados na tela
       );
+    this.snackBar.open('Item da Galeria Deletado!', '', {
+      duration: 3000
+    })
   }
 
   load() {
-    this.galeria.getAll().subscribe(data => this.itens = data);
+    this.galeria.getAll().subscribe({
+      next: data => {
+        this.itens = data;
+        this.carregando = false;
+      },
+      error: err => {
+        console.error(err);
+        this.carregando = false;
+      }
+    });
   }
 
   readonly dialog = inject(MatDialog);
@@ -46,6 +61,9 @@ export class AdminGaleriaComponent implements OnInit {
     ref.afterClosed().subscribe(didCreate => {
       if (didCreate) {
         this.load();
+        this.snackBar.open('Item da Galeria Adicionado!', '', {
+          duration: 3000
+        })
       }
     });
   }
@@ -60,6 +78,9 @@ export class AdminGaleriaComponent implements OnInit {
       if (updatedItem?.id) {
         this.galeria.update(updatedItem)
           .subscribe(() => this.load());
+        this.snackBar.open('Item da Galeria Alterado!', '', {
+          duration: 3000
+        })
       }
     });
   }

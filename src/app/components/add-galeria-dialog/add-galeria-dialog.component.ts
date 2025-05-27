@@ -4,10 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {
-  MatDialog,
   MatDialogActions,
   MatDialogClose,
-  MatDialogContent,
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
@@ -25,7 +23,7 @@ export class AddGaleriaDialogComponent {
 
   constructor(
     private galeria: GaleriaService,
-    private dialogRef: MatDialogRef<AddGaleriaDialogComponent>
+    private dialogRef: MatDialogRef<AddGaleriaDialogComponent>,
   ) { }
 
   itemGaleria: GaleriaItem = {

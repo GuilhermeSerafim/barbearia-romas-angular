@@ -9,17 +9,21 @@ import { CommonModule } from '@angular/common';
 import { AddAgendamentoDialogComponent } from '../../components/add-agendamento-dialog/add-agendamento-dialog.component';
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-admin-agendamentos',
   standalone: true,
-  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule, PhonePipe, DashIfEmptyPipe],
+  imports: [NavbarAdmComponent, FooterAdmComponent, MatDialogModule, CommonModule, PhonePipe, DashIfEmptyPipe, MatProgressSpinnerModule],
   templateUrl: './admin-agendamentos.component.html',
   styleUrl: './admin-agendamentos.component.css'
 })
 export class AdminAgendamentosComponent implements OnInit {
+  carregando: boolean = true;
 
-  constructor(private agendamentoService: AgendamentosService) { }
+  constructor(private agendamentoService: AgendamentosService, private snackBar: MatSnackBar) { }
 
   readonly dialog = inject(MatDialog);
 
@@ -30,13 +34,26 @@ export class AdminAgendamentosComponent implements OnInit {
   }
 
   load() {
-    this.agendamentoService.getAll().subscribe(data => this.itensAgendamentos = data);
+    this.agendamentoService.getAll().subscribe({
+      next: data => {
+        this.itensAgendamentos = data;
+        this.carregando = false;
+      },
+      error: err => {
+        console.error(err);
+        this.carregando = false;
+      }
+    });
   }
 
   deletarAgendamento(id: string | undefined) {
     this.agendamentoService.delete(id)
-      .subscribe(() =>
+      .subscribe(() => {
         this.load() //  recarrega os dados na tela
+        this.snackBar.open('Item deletado', '', {
+          duration: 3000
+        })
+      }
       );
   }
 
