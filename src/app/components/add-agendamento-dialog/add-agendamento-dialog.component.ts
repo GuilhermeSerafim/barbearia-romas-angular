@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AgendamentosService } from '../../services/agendamentos.service';
 import { AgendamentoItem } from '../../interfaces/agendamento-item';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-agendamento-dialog',
@@ -25,7 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 export class AddAgendamentoDialogComponent {
   constructor(
     private dialogRef: MatDialogRef<AddAgendamentoDialogComponent>,
-    private agendamentosService: AgendamentosService
+    private agendamentosService: AgendamentosService,
+    private snackBar: MatSnackBar
   ) { }
 
   itemAgendamento: AgendamentoItem = {
@@ -51,6 +53,9 @@ export class AddAgendamentoDialogComponent {
       .subscribe({
         next: () => {
           this.dialogRef.close(true);
+          this.snackBar.open('Item adicionado!', '', {
+            duration: 3000
+          });
         },
         error: err => {
           console.error('Falaha ao criar item de galeria', err);

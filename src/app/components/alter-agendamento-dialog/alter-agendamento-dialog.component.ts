@@ -9,6 +9,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-alter-agendamento-dialog',
@@ -25,7 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 export class AlterAgendamentoDialogComponent {
   constructor(
     private dialogRef: MatDialogRef<AlterAgendamentoDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: AgendamentoItem
+    @Inject(MAT_DIALOG_DATA) public data: AgendamentoItem,
+    private snackBar: MatSnackBar
   ) { }
 
   itemAgendamento: AgendamentoItem = {
@@ -45,5 +47,10 @@ export class AlterAgendamentoDialogComponent {
   ngOnInit(): void {
     this.itemAgendamento = { ...this.data };
   }
-  alterarItemAgendamento = () => this.dialogRef.close(this.itemAgendamento);
+  alterarItemAgendamento = () => {
+    this.snackBar.open('Item alterado!', '', {
+      duration: 3000
+    })
+    this.dialogRef.close(this.itemAgendamento)
+  };
 }

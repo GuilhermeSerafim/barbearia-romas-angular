@@ -10,6 +10,8 @@ import { AddAgendamentoDialogComponent } from '../../components/add-agendamento-
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { DashIfEmptyPipe } from '../../pipes/dash-if-empty.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-admin-agendamentos',
@@ -21,7 +23,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 export class AdminAgendamentosComponent implements OnInit {
   carregando: boolean = true;
 
-  constructor(private agendamentoService: AgendamentosService) { }
+  constructor(private agendamentoService: AgendamentosService, private snackBar: MatSnackBar) { }
 
   readonly dialog = inject(MatDialog);
 
@@ -46,8 +48,12 @@ export class AdminAgendamentosComponent implements OnInit {
 
   deletarAgendamento(id: string | undefined) {
     this.agendamentoService.delete(id)
-      .subscribe(() =>
+      .subscribe(() => {
         this.load() //  recarrega os dados na tela
+        this.snackBar.open('Item deletado', '', {
+          duration: 3000
+        })
+      }
       );
   }
 
