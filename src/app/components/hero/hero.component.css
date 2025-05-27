@@ -30,6 +30,7 @@
         1px 1px 0 black;
     font-size: 65px;
     font-family: var(--fonte-titulo);
+    margin-top: 140px;
 }
 
 .seta {
