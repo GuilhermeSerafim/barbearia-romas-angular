@@ -58,7 +58,7 @@ export class AddAgendamentoDialogComponent {
           });
         },
         error: err => {
-          console.error('Falaha ao criar item de galeria', err);
+          console.error('Falha ao criar item de galeria', err);
         }
       });
   }
