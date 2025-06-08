@@ -1,22 +1,26 @@
 .servicos {
-    height: 50vh;
-    padding: 100px 20px;
-    background-color: var(--bege);
-    text-align: center;
+  padding: 6rem 1rem;
+  background-color: var(--bege);
+  text-align: center;
 }
 
 .servicos h2 {
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 32px;
-    font-family: var(--fonte-titulo);
-    color: var(--bordo);
-    margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2rem);
+  font-family: var(--fonte-titulo);
+  color: var(--bordo);
 }
 
 .cards {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  justify-items: center;
+  box-sizing: border-box; /* para que o padding não aumente a largura total */
 }
