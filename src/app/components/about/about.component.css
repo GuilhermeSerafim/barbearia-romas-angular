@@ -1,41 +1,63 @@
-
 .quem-somos {
-    padding: 100px 20px;
+    padding: clamp(2rem, 5vw, 6rem) 1rem;
+    /* padding vertical fluido */
     background-color: var(--bege);
 }
 
 .quem-somos h2 {
     text-align: center;
-    font-size: 32px;
     font-family: var(--fonte-titulo);
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
     color: var(--bordo);
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
 }
 
 .quem-somos-content {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 2rem;
     max-width: 1100px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
+/* texto fica flexível */
 .quem-somos-content .texto {
-    max-width: 500px;
+    flex: 1 1 300px;
+    /* cresce, encolhe, min 300px */
+    max-width: 600px;
     text-align: justify;
-    line-height: 135.938%;
-    font-size: 18px;
-    width: 468px;
-    height: 311px;
+    line-height: 1.5;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
 }
 
 .quem-somos-content img {
-    width: 400px;
+    max-width: 100%;
+    height: auto;
     transition: transform 0.3s;
 }
 
 .quem-somos-content img:hover {
     transform: scale(1.05);
+}
+
+/* empilha abaixo de 768px */
+@media (max-width: 768px) {
+    .quem-somos-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quem-somos-content .texto {
+        order: 2;
+        /* se preferir texto abaixo da imagem: order: 2 */
+        width: 100%;
+    }
+
+    .quem-somos-content img {
+        order: 1;
+        margin-bottom: 1.5rem;
+    }
 }
