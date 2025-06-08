@@ -13,7 +13,7 @@
     color: #000;
     text-align: center;
     font-family: Lobster;
-    font-size: 65px;
+    font-size: clamp(2.5rem, 5vw, 65px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -173,7 +173,21 @@
 .btn-adicionar svg:hover {
     transform: scale(1.1);
 }
-.mat-mdc-progress-spinner { 
-    --mdc-circular-progress-active-indicator-color: var(--bordo); 
+
+.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: var(--bordo);
 }
 
+@media (max-width: 600px) {
+    /* 1267 */
+    .datagrid th:nth-child(3),
+    .datagrid td:nth-child(3),
+    .datagrid th:nth-child(4),
+    .datagrid td:nth-child(4),
+    .datagrid th:nth-child(5),
+    .datagrid td:nth-child(5)
+     {
+        display: none;
+        padding: 20px;
+    }
+}
