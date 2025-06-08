@@ -1,13 +1,20 @@
 <nav class="menu">
-    <ul>
-        <li><a href="#quem-somos">QUEM SOMOS</a></li>
-        <li><a href="#servicos">SERVIÇOS</a></li>
+  <!-- botão hambúrguer só aparece em mobile -->
+  <button class="menu__toggle" (click)="toggleMenu()" aria-label="Abrir/fechar menu">
+    <span class="menu__bar"></span>
+    <span class="menu__bar"></span>
+    <span class="menu__bar"></span>
+  </button>
 
-        <li class="logo">
-            <img src="/logo2.png" alt="Logo Romas">
-        </li>
+  <ul [class.active]="isMenuOpen">
+    <li><a href="#quem-somos">QUEM SOMOS</a></li>
+    <li><a href="#servicos">SERVIÇOS</a></li>
 
-        <li><a href="#galeria">GALERIA</a></li>
-        <li><a href="https://wa.me/+5511975735795" target="_blank">CONTATO</a></li>
-    </ul>
+    <li class="logo">
+      <img src="/logo2.png" alt="Logo Romas">
+    </li>
+
+    <li><a href="#galeria">GALERIA</a></li>
+    <li><a href="https://wa.me/+5511975735795" target="_blank">CONTATO</a></li>
+  </ul>
 </nav>
