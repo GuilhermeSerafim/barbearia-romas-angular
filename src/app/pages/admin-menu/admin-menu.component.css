@@ -174,3 +174,20 @@ display: inline-block: faz do botão um bloco “inline”, permitindo largura/a
     background: var(--bordo);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
 }
+
+/* empilha abaixo de 768px */
+@media (max-width: 768px) {
+    .container-agendamentos {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container-galeria {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+}
