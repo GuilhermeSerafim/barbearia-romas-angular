@@ -5,12 +5,26 @@
     <div class="container">
       <h1 class="h1adm">ADMINISTRADOR</h1>
       <div class="texto-u-s">
-        <input type="text" placeholder="Usuário" [(ngModel)]="user" />
-        <input type="password" placeholder="Senha" [(ngModel)]="password" />
-        <button class="button-entrar" (click)="onSubmit()">Entrar</button>
-        @if(errorMsg) {
-        <p class="error">{{errorMsg}}</p>
-        }
+        <form class="form">
+          <mat-form-field class="add-item">
+            <mat-label>Usuário</mat-label>
+            <input name="usuario" [(ngModel)]="user" matInput>
+          </mat-form-field>
+          <mat-form-field class="add-item">
+            <mat-label>Senha</mat-label>
+            <input name="senha" [(ngModel)]="password" type="password" matInput>
+          </mat-form-field>
+        </form>
+
+        <button mat-flat-button class="button-entrar" [disabled]="loading" (click)="onSubmit()">
+          @if (loading) {
+          <mat-spinner diameter="24" strokeWidth="3"></mat-spinner>
+          } @else {
+          Entrar
+          }
+        </button>
+
+        <p class="error" [class.visible]="!!errorMsg">{{ errorMsg || '‎' }}</p>
       </div>
     </div>
   </main>

@@ -1,85 +1,108 @@
 /* login.component.scss */
 
 .login-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 120dvh;         /* ocupa a viewport inteira */
-  }
-  
-  .login-main {
-    flex: 1;                /* ocupa o espaço entre header e footer */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-height: 0;          /* evita estouro em flex‑box */
-  }
-  
-  /* -----------  AQUI o ajuste -------------- */
-  .container {
-    width: 100%;            /* ocupa toda a largura possível */
-    max-width: 422px;       /* mas nunca passa de 422 px        */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  height: 120dvh;
+  /* ocupa a viewport inteira */
+}
 
-  .h1adm {
-    color: #6d1817;
-    font-family: 'Lobster';
-    font-size: 32px;
-    font-weight: 400;
-    margin-bottom: 20px;
-  }
-  
-  .texto-u-s {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-  
-  input,
-  .button-entrar {
-    width: 100%;
-    height: 64px;
-    border-radius: 5px;
-    font-family: 'Poppins';
-    font-size: 16px;
-    box-sizing: border-box; /* garante que borda conte na largura */
-  }
-  
-  input {
-    border: 1px solid #000;
-    background: #fff;
-    padding: 10px;
-  }
-  
-  .button-entrar {
-    margin-top: 10px;
-    background: #6d1817;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .button-entrar:hover {
-    background: #5a1413;
-  }
+.login-main {
+  flex: 1;
+  /* ocupa o espaço entre header e footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 0;
+  /* evita estouro em flex‑box */
+}
 
-  
-  @media (max-width:  1700px) {
-    .h1adm {
-      margin-top: 100px;
-    }
-    
-}   
+/* -----------  AQUI o ajuste -------------- */
+.container {
+  width: 100%;
+  /* ocupa toda a largura possível */
+  max-width: 422px;
+  /* mas nunca passa de 422 px        */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.h1adm {
+  color: #6d1817;
+  font-family: 'Lobster';
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.texto-u-s {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
 
 .error {
   color: red;
   text-align: center;
+  height: 24px;
+  /* ou ajuste como preferir */
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.error.visible {
+  opacity: 1;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.button-entrar {
+  width: 100%;
+  font-family: var(--fonte-titulo);
+  height: 56px;
+  font-size: 18px;
+  border-radius: 4px;
+  color: white;
+  background-color: var(--bordo);
+}
+
+::ng-deep .button-entrar.mdc-button {
+  background-color: var(--bordo) !important;
+  color: white !important;
+}
+
+::ng-deep .button-entrar.mdc-button:hover {
+  background-color: #5a1413 !important;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  --mdc-outlined-text-field-outline-color: var(--bordo);
+  --mdc-outlined-text-field-focus-outline-color: var(--bordo);
+  --mdc-filled-text-field-active-indicator-color: var(--bordo);
+  --mdc-filled-text-field-focus-active-indicator-color: var(--bordo);
+  --mdc-filled-text-field-focus-label-text-color: var(--bordo);
+  --mdc-filled-text-field-hover-active-indicator-color: var(--bordo);
+}
+
+::ng-deep .mat-mdc-form-field.mat-mdc-form-field-type-mat-input {
+  --mdc-filled-text-field-container-color: var(--input-fill-bg);
+  --mdc-filled-text-field-focus-container-color: var(--input-fill-bg);
+  --mdc-filled-text-field-hover-container-color: var(--input-fill-bg);
+}
+
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: white;
+}
+
+@media (max-width: 1700px) {
+  .h1adm {
+    margin-top: 100px;
+  }
 }
