@@ -24,9 +24,7 @@
           }
         </button>
 
-        @if(errorMsg) {
-        <p class="error">{{errorMsg}}</p>
-        }
+        <p class="error" [class.visible]="!!errorMsg">{{ errorMsg || '‎' }}</p>
       </div>
     </div>
   </main>
