@@ -78,9 +78,7 @@ mat-form-field {
   --mdc-outlined-text-field-focus-outline-color: var(--bordo);
   --mdc-filled-text-field-active-indicator-color: var(--bordo);
   --mdc-filled-text-field-focus-active-indicator-color: var(--bordo);
-  --mdc-filled-text-field-label-text-color: var(--bordo);
   --mdc-filled-text-field-focus-label-text-color: var(--bordo);
-  --mdc-filled-text-field-input-text-color: var(--bordo);
   --mdc-filled-text-field-hover-active-indicator-color: var(--bordo);
 }
 
@@ -90,6 +88,9 @@ mat-form-field {
   --mdc-filled-text-field-hover-container-color: var(--input-fill-bg);
 }
 
+.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: white;
+}
 @media (max-width: 1700px) {
   .h1adm {
     margin-top: 100px;

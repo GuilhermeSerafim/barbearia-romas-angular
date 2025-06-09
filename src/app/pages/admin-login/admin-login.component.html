@@ -6,7 +6,7 @@
       <h1 class="h1adm">ADMINISTRADOR</h1>
       <div class="texto-u-s">
         <form class="form">
-          <mat-form-field  class="add-item">
+          <mat-form-field class="add-item">
             <mat-label>Usuário</mat-label>
             <input name="usuario" [(ngModel)]="user" matInput>
           </mat-form-field>
@@ -15,9 +15,15 @@
             <input name="senha" [(ngModel)]="password" type="password" matInput>
           </mat-form-field>
         </form>
-        <button mat-flat-button class="button-entrar" (click)="onSubmit()">
+
+        <button mat-flat-button class="button-entrar" [disabled]="loading" (click)="onSubmit()">
+          @if (loading) {
+          <mat-spinner diameter="24" strokeWidth="3"></mat-spinner>
+          } @else {
           Entrar
+          }
         </button>
+
         @if(errorMsg) {
         <p class="error">{{errorMsg}}</p>
         }
