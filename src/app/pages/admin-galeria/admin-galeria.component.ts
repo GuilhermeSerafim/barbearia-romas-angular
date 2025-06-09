@@ -29,12 +29,25 @@ export class AdminGaleriaComponent implements OnInit {
   }
 
   remove(id: string) {
-    this.galeria.delete(id)
-      .subscribe(() =>
-        this.load() //  recarrega os dados na tela
-      );
-    this.snackBar.open('Item da Galeria Deletado!', '', {
-      duration: 3000
+    this.galeria.delete(id).subscribe({
+      error: err => {
+        console.error(err)
+        this.snackBar.open("Erro ao Deletar Item da Galeria", "", { duration: 3000 });
+      },
+      complete: () => {
+        this.galeria.getAll().subscribe({
+          next: data => {
+            this.itens = data;
+            this.carregando = false;
+          },
+          error: err => {
+            console.error(err);
+            this.carregando = false;
+          },
+          complete: () =>  this.snackBar.open('Item da Galeria Deletado!', "", { duration: 3000 })
+        });
+       
+      }
     })
   }
 
@@ -66,6 +79,7 @@ export class AdminGaleriaComponent implements OnInit {
         })
       }
     });
+
   }
 
   alter(itemGaleriaParam: GaleriaItem) {
