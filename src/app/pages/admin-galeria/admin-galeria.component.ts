@@ -42,11 +42,12 @@ export class AdminGaleriaComponent implements OnInit {
           },
           error: err => {
             console.error(err);
+            this.snackBar.open("Erro ao Carregar Itens da Galeria", "", { duration: 3000 });
             this.carregando = false;
           },
-          complete: () =>  this.snackBar.open('Item da Galeria Deletado!', "", { duration: 3000 })
+          complete: () => this.snackBar.open('Item da Galeria Deletado!', "", { duration: 3000 })
         });
-       
+
       }
     })
   }
@@ -59,6 +60,7 @@ export class AdminGaleriaComponent implements OnInit {
       },
       error: err => {
         console.error(err);
+        this.snackBar.open("Erro ao Carregar Itens da Galeria", "", { duration: 3000 });
         this.carregando = false;
       }
     });
@@ -71,14 +73,27 @@ export class AdminGaleriaComponent implements OnInit {
       width: '800px'
     });
 
-    ref.afterClosed().subscribe(didCreate => {
-      if (didCreate) {
-        this.load();
-        this.snackBar.open('Item da Galeria Adicionado!', '', {
-          duration: 3000
-        })
+    ref.afterClosed().subscribe(({
+      error: err => {
+        console.error(err)
+        this.snackBar.open("Erro ao Adicionar Item da Galeria", "", { duration: 3000 });
+      },
+      complete: () => {
+        this.galeria.getAll().subscribe({
+          next: data => {
+            this.itens = data;
+            this.carregando = false;
+          },
+          error: err => {
+            console.error(err);
+            this.snackBar.open("Erro ao Carregar Itens da Galeria", "", { duration: 3000 });
+            this.carregando = false;
+          },
+          complete: () => this.snackBar.open('Item da Galeria Adicionado!', "", { duration: 3000 })
+        });
+
       }
-    });
+    }));
 
   }
 
