@@ -97,6 +97,15 @@ mat-form-field {
   --mdc-filled-text-field-hover-container-color: var(--input-fill-bg);
 }
 
+:host ::ng-deep input.mat-mdc-input-element:-webkit-autofill {
+  /* fundo do campo (inset shadow) */
+  -webkit-box-shadow: 0 0 0 1000px var(--input-fill-bg) inset !important;
+          box-shadow: 0 0 0 1000px var(--input-fill-bg) inset !important;
+
+  /* cor do texto após o autofill */
+  -webkit-text-fill-color: var(--mat-app-on-surface) !important;
+}
+
 .mat-mdc-progress-spinner {
   --mdc-circular-progress-active-indicator-color: white;
 }
