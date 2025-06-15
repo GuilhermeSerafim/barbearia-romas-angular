@@ -26,9 +26,3 @@ Sistema de landing page + área administrativa para gerenciamento de galeria de 
 - TypeScript
 - Angular Router
 - JSON Server (Mock API para testes de CRUD)
-
----
-
-> Projeto em desenvolvimento. Novas funcionalidades e melhorias de UX/UI serão implementadas nas próximas versões.
-
----
