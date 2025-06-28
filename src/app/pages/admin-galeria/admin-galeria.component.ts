@@ -18,6 +18,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './admin-galeria.component.css'
 })
 export class AdminGaleriaComponent implements OnInit {
+  isAdmin = !!localStorage.getItem('isAdmin');
+
   carregando: boolean = true;
 
   constructor(private galeria: GaleriaService, private snackBar: MatSnackBar) { }

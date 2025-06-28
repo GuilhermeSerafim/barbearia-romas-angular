@@ -23,7 +23,9 @@
           Entrar
           }
         </button>
-
+        <div class="container">
+          <button mat-flat-button class="button-entrar" (click)="navigateToMenu()">Visualizar</button>
+        </div>
         <p class="error" [class.visible]="!!errorMsg">{{ errorMsg || '‎' }}</p>
       </div>
     </div>

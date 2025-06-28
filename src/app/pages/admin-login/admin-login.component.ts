@@ -18,6 +18,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
+
   user = '';
   password = '';
   errorMsg = '';
@@ -60,7 +61,9 @@ export class AdminLoginComponent {
       }
     });
   }
-
+  navigateToMenu() {
+    this.router.navigate(['/adm/menu']);
+  }
 
 }
 

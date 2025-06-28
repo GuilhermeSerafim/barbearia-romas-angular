@@ -10,7 +10,7 @@ import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
     { path: '', component: LandingPageComponent },    // sua landing page (ajustar nome se for outro)
     { path: 'adm/login', component: AdminLoginComponent },
-    { path: 'adm/menu', component: AdminMenuComponent, canActivate: [AuthGuard] },
-    { path: 'adm/agendamentos', component: AdminAgendamentosComponent, canActivate: [AuthGuard] },
-    { path: 'adm/galeria', component: AdminGaleriaComponent, canActivate: [AuthGuard] },
+    { path: 'adm/menu', component: AdminMenuComponent },
+    { path: 'adm/agendamentos', component: AdminAgendamentosComponent },
+    { path: 'adm/galeria', component: AdminGaleriaComponent },
 ];

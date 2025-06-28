@@ -100,7 +100,7 @@ mat-form-field {
 :host ::ng-deep input.mat-mdc-input-element:-webkit-autofill {
   /* fundo do campo (inset shadow) */
   -webkit-box-shadow: 0 0 0 1000px var(--input-fill-bg) inset !important;
-          box-shadow: 0 0 0 1000px var(--input-fill-bg) inset !important;
+  box-shadow: 0 0 0 1000px var(--input-fill-bg) inset !important;
 
   /* cor do texto após o autofill */
   -webkit-text-fill-color: var(--mat-app-on-surface) !important;
@@ -110,8 +110,12 @@ mat-form-field {
   --mdc-circular-progress-active-indicator-color: white;
 }
 
+.container {
+  display: flex;
+}
+
 @media (max-width: 1700px) {
   .h1adm {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 }

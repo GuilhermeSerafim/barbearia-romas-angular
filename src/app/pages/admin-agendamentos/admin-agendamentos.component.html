@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                         <th>
-                            <button (click)="adicionarItemAgendamento()" class="btn-adicionar">
+                            <button [disabled]="!isAdmin" (click)="adicionarItemAgendamento()" class="btn-adicionar">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -34,7 +34,7 @@
                     @for(itemAgendamento of itensAgendamentos; track $index; let i = $index;) {
                     <tr>
                         <td class="grid-line">
-                            <button (click)="deletarAgendamento(itemAgendamento.id)" class="btn-delete"
+                            <button [disabled]="!isAdmin" (click)="deletarAgendamento(itemAgendamento.id)" class="btn-delete"
                                 aria-label="Excluir">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
                                 </svg>
 
                             </button>
-                            <button (click)="alterarAgendamento(itemAgendamento)" class="btn-alterar"
+                            <button (click)="alterarAgendamento(itemAgendamento)" [disabled]="!isAdmin" class="btn-alterar"
                                 aria-label="Alterar">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -73,6 +73,7 @@
         </div>
         }
     </div>
-
+    <button [disabled]="!isAdmin" (click)="debug()">Debug</button>
 </main>
 <app-footer-adm />
+

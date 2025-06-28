@@ -21,6 +21,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './admin-agendamentos.component.css'
 })
 export class AdminAgendamentosComponent implements OnInit {
+  
+  isAdmin = !!localStorage.getItem('isAdmin');
+
   carregando: boolean = true;
 
   constructor(private agendamentoService: AgendamentosService, private snackBar: MatSnackBar) { }
