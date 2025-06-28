@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     gap: 200px;
-    margin: 150px 0;
 }
 
 .container-agendamentos img {
@@ -89,7 +88,6 @@ display: inline-block: faz do botão um bloco “inline”, permitindo largura/a
 /* GALERIA */
 .container-galeria {
     display: flex;
-    margin: 150px 0;
     align-items: center;
 
     justify-content: center;
@@ -173,6 +171,14 @@ display: inline-block: faz do botão um bloco “inline”, permitindo largura/a
     height: 8px;
     background: var(--bordo);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+.aviso-view {
+    margin-top: 200px;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: 32px;
+    color: gray;
 }
 
 /* empilha abaixo de 768px */

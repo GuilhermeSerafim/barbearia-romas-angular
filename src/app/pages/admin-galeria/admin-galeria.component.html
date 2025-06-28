@@ -3,34 +3,37 @@
     <div class="container-bg">
         <h1>GALERIA</h1>
     </div>
-    <svg (click)="addDialog()" class="svg-adicionar" width="53" height="53" viewBox="0 0 53 53" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_46_2270)">
-            <rect x="4" width="45" height="45" rx="4" fill="#1E2E79" />
-            <path d="M24.625 24.375H13.375V20.625H24.625V9.375H28.375V20.625H39.625V24.375H28.375V35.625H24.625V24.375Z"
-                fill="#E3E3E3" />
-        </g>
-        <defs>
-            <filter id="filter0_d_46_2270" x="0" y="0" width="53" height="53" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha" />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="2" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_46_2270" />
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_46_2270" result="shape" />
-            </filter>
-        </defs>
-    </svg>
+    <button (click)="addDialog()" [disabled]="!isAdmin" [style.border]="'none'" [style.backgroundColor]="'#fbf8ee'">
+        <svg class="svg-adicionar" width="53" height="53" viewBox="0 0 53 53" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_46_2270)">
+                <rect x="4" width="45" height="45" rx="4" fill="#1E2E79" />
+                <path
+                    d="M24.625 24.375H13.375V20.625H24.625V9.375H28.375V20.625H39.625V24.375H28.375V35.625H24.625V24.375Z"
+                    fill="#E3E3E3" />
+            </g>
+            <defs>
+                <filter id="filter0_d_46_2270" x="0" y="0" width="53" height="53" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_46_2270" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_46_2270" result="shape" />
+                </filter>
+            </defs>
+        </svg>
+    </button>
 
     <div class="container-clientes">
         @if(carregando) {
-            <div>
-                <mat-spinner></mat-spinner>
-            </div>
+        <div>
+            <mat-spinner></mat-spinner>
+        </div>
         }@else {
 
         @for (client of itens; track $index; let i = $index) {

@@ -11,6 +11,8 @@ import { NavbarAdmComponent } from '../../components/adm/navbar-adm/navbar-adm.c
   styleUrl: './admin-menu.component.css'
 })
 export class AdminMenuComponent {
+  isAdmin = !!localStorage.getItem('isAdmin');
+
   constructor(private router: Router) { }
   entraGaleria() {
     this.router.navigate(['/adm/galeria']);

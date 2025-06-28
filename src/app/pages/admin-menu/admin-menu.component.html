@@ -1,5 +1,11 @@
 <app-navbar-adm />
 <main>
+    @if(!isAdmin) {
+        <div class="aviso-view">
+            No modo de visualização, as funcionalidades de cadastro, edição e exclusão estão desativadas.
+        </div>
+    }
+
     <div class="container-agendamentos">
         <img src="/menu-adm-agendamentos.png" alt="Agendamentos" />
         <div class="info-agendamentos">
@@ -12,12 +18,13 @@
         <img src="/menu-adm-galeria.png" alt="Galeria" />
         <div class="info-galeria">
             <h1 class="info-galeria-item">GALERIA</h1>
-            <p class="info-galeria-item">Gerencie as fotos da barbearia. Adicione, edite ou remova imagens com facilidade.
+            <p class="info-galeria-item">Gerencie as fotos da barbearia. Adicione, edite ou remova imagens com
+                facilidade.
 
-</p>
+            </p>
             <button class="info-galeria-item" (click)="entraGaleria()">ENTRAR</button>
         </div>
     </div>
 
 </main>
-<app-footer-adm/>
+<app-footer-adm />

@@ -9,6 +9,8 @@ import { GaleriaItem } from '../../interfaces/galeria-item';
   styleUrl: './card-galeria-adm.component.css'
 })
 export class CardGaleriaAdmComponent {
+  isAdmin = !!localStorage.getItem('isAdmin');
+
   @Input({ alias: 'alt' }) altImg: string = "";
   @Input({ alias: 'index', required: true }) index: number = 0;
   @Input({ alias: 'path', required: true }) pathimg: string | undefined;
@@ -17,7 +19,7 @@ export class CardGaleriaAdmComponent {
   @Input({ alias: 'idItemGaleria', required: true }) idItemGaleria: string | undefined;
   @Output() idClientEmmit = new EventEmitter<string>();
   @Output() objClientEmmit = new EventEmitter<GaleriaItem>();
-  
+
   emitirItemASerExcluido() {
     this.idClientEmmit.emit(this.idItemGaleria);
   }
